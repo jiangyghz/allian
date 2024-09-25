@@ -60,7 +60,7 @@ public  invoice(JdbcTemplate jd)
 
     public void testRSAGenerate() throws Exception {
         KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("RSA");
-        keyPairGen.initialize(1024);
+        keyPairGen.initialize(2048);
         KeyPair keyPair = keyPairGen.generateKeyPair();
         PublicKey publicKey = keyPair.getPublic();
         PrivateKey privateKey = keyPair.getPrivate();
