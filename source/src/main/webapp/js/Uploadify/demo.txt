@@ -1,0 +1,63 @@
+example:
+
+<script src="../js/jquery-1.4.4.min.js" type="text/javascript"></script>
+<script src="../js/Uploadify/jquery.uploadify.js" type="text/javascript"></script>
+<link href="../js/Uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+
+html:
+<input type="file" name="uploadify" id="uploadify" />
+<div id="fileQueue" style="padding-top:10px;"></div>
+
+js:
+$("#uploadify").uploadify({
+    'swf': '../js/uploadify/uploadify.swf',
+    'uploader': '../WebService/uploadFile.ashx',
+    'cancelImage': '../js/uploadify/cancel.png',
+    'queueID': 'fileQueue',
+    'postData':{"folder":"../"+paths}, //文件保存路径
+    'auto': true,
+    'multi': true,
+    'fileTypeExts':'*.gif;*.jpg;*.png;*.bmp',
+    'fileTypeDesc':'图片类型',
+    'buttonText':'上传',
+    "onUploadSuccess" : function(event, response, status){
+        alert(response);
+    }
+});
+
+
+cs:
+
+public void ProcessRequest(HttpContext context)
+        {
+            ////在这里添加保存上传文件的代码
+
+            //输出信息,以便Flash能触发onUploadComplete事件.
+            //context.Response.Write("ok");
+
+            context.Response.ContentType = "text/plain";
+            context.Response.Charset = "utf-8";
+
+            if (context.Request.Files.Count == 0) return;
+            HttpPostedFile file = context.Request.Files["Filedata"];
+
+            string filePath;
+            FileInfo fileInfo = new FileInfo(file.FileName);
+            filePath = Frame.Base.GlobalSetting.TempPath;
+            var folder = context.Request.Params["folder"];
+            if (!string.IsNullOrEmpty(folder))
+            {
+                filePath =context.Server.MapPath(folder);
+            }
+            if (!Directory.Exists(filePath))
+            {
+                Directory.CreateDirectory(filePath);
+            }   
+            string newFileName = Guid.NewGuid().ToString() + fileInfo.Extension;
+
+            file.SaveAs(filePath + "\\" + newFileName);
+            
+ 
+            //输出文件路径
+            context.Response.Write(newFileName);
+        }

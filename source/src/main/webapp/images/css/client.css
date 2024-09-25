@@ -1,0 +1,267 @@
+/*输入框*/
+.menu_list{ margin-left:0.33rem;}
+.menu_list > li{ width:100%; border-bottom:1px solid #efefef; padding:0.33rem 0;}
+.menu_list li .h_24{ height:0.8rem; line-height:0.8rem; margin-right:0.33rem; position:relative; font-size: 0.486rem;}
+.h_24 label{ font-size:0.486rem; color:#454545;}
+.h_24 input[type="text"],.h_24 input[type="tel"],.h_24 input[type="number"]{ border: 0; height:0.8rem; color:#454545; border:none; -webkit-appearance: none; -moz-appearance:none; font-size:0.486rem; display:inline-block; background:rgba(255,255,255,0); }
+.h_24 input[type="number"]{ border: 0;}
+
+.h_24 select{ color:#454545; border:none; -webkit-appearance: none; font-size:0.486rem; display:inline-block; background:rgba(255,255,255,0); width:65%; -moz-appearance:none; }
+.h_24 input[type="radio"]{ -webkit-appearance: radio; line-height:0.8rem; color:#454545; border:none;  font-size:0.486rem; display:inline-block; outline: none; }
+
+
+/*添加图片*/
+.add_img{ padding:0.33rem;}
+.add_img li{ border:1px solid #b9b9b9; width:3.2rem; height:3.2rem; line-height:3.2rem; text-align:center; font-size:1.4rem; margin-bottom:0.33rem; float:left; overflow: hidden; margin-right:0.40rem; color:#b9b9b9;}
+
+/*所需服务*/
+.service{ display:inline-block; position:absolute; left:3.1rem;}
+.service p{ width:3.3rem; text-align:center; line-height:1rem; color:#454545; border-radius:0.1rem; border:1px solid #b9b9b9; float:left; margin-right:0.33rem; font-size:0.486rem;}
+.service p.active{ background:url(../images/selected.png) no-repeat right center; background-size:25%;}
+/*续保项目*/
+.object{ padding:0.33rem;}
+.object li{ width:30%; text-align:center; line-height:1rem; color:#454545; border-radius:0.1rem; border:1px solid #b9b9b9; float:left; margin-right:2%; font-size:0.486rem;  margin-bottom: 0.33rem;}
+.object li.active{ background:url(../images/selected.png) no-repeat right center; background-size:0.8rem;}
+
+/*录音*/
+.record{ width:5.5rem; line-height:1rem; text-align:center; color:#fff; border-radius:0.1rem; display:inline-block; background:#00b050; outline:none; border:none; font-size:0.486rem;}
+/*其他需求*/
+.h{ margin-right:0.33rem; }
+.h textarea{  -webkit-appearance: none; width:96%; border:1px solid #efefef; border-radius:0.1rem; height:2.06rem; padding:2%; line-height:0.8rem; font-size:0.486rem;}
+/*车辆绑定*/
+.h_24 span{ color:#d2001e;}
+/*会员中心*/
+.top{ width: 100%; background: url("../images/vip/top_bg.jpg") no-repeat; background-size:100% 100%; border-bottom: 1px solid #efefef;}
+.top_info{ margin:0  0.33rem; padding:0.33rem 0;}
+.top_info .top_img{ width: 3.312rem; height: 3.312rem; overflow: hidden; float: left; border-radius: 50%; border: 1px solid #efefef; }
+.top_info_div{ margin-left: 3.6rem; padding: 0.75rem 0 0; font-size: 0.54rem; color: #454545; position: relative;}
+.top_info_div .vip_name{ line-height: 0.72rem;}
+.top_info_div .vip_name .v{ display: inline-block; color: #b9b9b9; background: url("../images/vip/v.png") no-repeat left center; font-size: 0.42rem; text-indent: 0.78rem;
+    margin-left:0.33rem; background-size:0.72rem; }
+.vip_num{ border-radius: 0.6rem; background: #d2001e; width: 4.8rem; text-align: center; line-height: 0.82rem;  color: #fff; font-size: 0.42rem; margin-top: 0.33rem;}
+.personal{ position: absolute; right: 0.33rem; background: url("../images/arrow.png") no-repeat right center; color: #b9b9b9; font-size: 0.42rem; top: 1.7rem; padding-right: 1.8em; background-size: 16%; }
+.row_menu{ width: 100%; border-bottom: 1px solid #efefef; background:#efefef; position:relative;}
+.row_menu:after{ content:""; display:block; position:absolute; width:0; height:0; border-left:0.63rem solid transparent; border-right:0.63rem solid transparent; border-bottom:0.66rem solid #efefef; top:-0.23rem; left:0.99rem;}
+
+.row_menu_list{ padding: 0.33rem;}
+.row_menu_list li{ width: 33%; text-align: center; border-right: 1px solid #f3f3f3; float:left;}
+.row_menu_list li p{ line-height: 0.7949rem; font-size: 0.4637rem;}
+.row_menu_list li p.row_menu_num{ color: #d2001e;}
+.row_menu_list li p.row_menu_name{ color: #454545;}
+/*会员中心我的账户、车友活动、车主宝典*/
+.vip_nav{ width:100%;}
+.nav_list li{ width:25%; float:left; text-align:center; padding:0.33rem 0; font-size:0.4637rem; }
+.vip_img{ width:25%; margin:0 auto;}
+
+
+/*会员中心功能*/
+.function_menu{ margin-left: 0.33rem;}
+.function_menu > li{ padding: 0.33rem 0; border-bottom: 1px solid #efefef; position: relative;}
+.function_menu li p{ height: 1rem; line-height:  1rem; font-size: 0.4637rem;}
+.right_page{ position: absolute; right: 0.33rem; top:0.33rem; background: url("../images/arrow.png") no-repeat right center; color: #b9b9b9; padding-right: 1.8em; background-size: 16%; }
+/*我要付款*/
+.pay{ text-indent: 1.12rem;background:url("../images/vip/pay.png") no-repeat left center; background-size:0.927rem; margin-left:0.1rem; }
+.pay_tip{ margin: 0.33rem;}
+.pay_tip_name{ color: #d2001e; font-size: 0.46rem; background: url("../images/vip/pay_tip.png") no-repeat left center;  background-size: 0.72rem; line-height: 0.9rem; padding-left:0.85rem;}
+.pay_way{ text-align: center;}
+.pay_way p{ font-size:0.486rem;}
+.pay_way .change{ color: #d2001e;}
+
+
+/*我的账单*/
+.bill{ background:url("../images/vip/bill.png") no-repeat left center; text-indent: 1.22rem; background-size:0.927rem; }
+.bill_top{ padding:0.33rem;}
+.bill_top_data p{ font-size:0.486rem; line-height:1.2rem;}
+.bill_list{ padding:0.33rem; font-size:0.486rem; }
+.bill_list > li{ padding:0.33rem 0; border-bottom: 1px solid #efefef;}
+.bill_list  p{ line-height:0.9315rem;}
+.bill_list .bill_list_left{ float:left;}
+.bill_list .bill_list_right{ float:right; color:#999;}
+.date_select{ background: url("../images/date.png") no-repeat right center; float: right; width: 1.13rem; height: 1.2rem; }
+
+/*立即结账*/
+.accounts{ background:url("../images/vip/accounts.png") no-repeat left center; text-indent: 1.22rem; background-size:0.927rem; }
+.accounts_top{ padding: 0.33rem; color: #d2001e; font-size: 0.486rem; text-align: center; }
+.code_img{ width: 60%; margin: 0 auto; padding: 0.8rem 0 0;}
+.code_txt{ line-height: 0.9rem; background: url("../images/vip/account_code.png") no-repeat 2.34rem center; background-size: 0.72rem;}
+.co_name{ text-align: center; padding: 0.33rem 0 0.8rem; font-size: 0.486rem; color: #a7a4a4;}
+/*服务热线*/
+.tel{ background:url("../images/vip/tel_vip.png") no-repeat left center; text-indent: 1.22rem; background-size:0.927rem;}
+/*地址*/
+.function_menu li p.address{ background:url("../images/vip/address.png") no-repeat left 0.1rem; background-size:0.927rem;height: auto;  padding-left: 1.22rem; line-height: 0.7rem;}
+/*我的服务顾问*/
+.vip_service{ background:url(../images/vip/service.png) no-repeat left center; text-indent:1.22rem; background-size:0.927rem;}
+/*我的预约*/
+.time{ background:url(../images/vip/time.png) no-repeat left center; text-indent:1.22rem; background-size:0.927rem;}
+
+/*我的优惠券*/
+.sale_top{ width:100%; background:#fff; color:#454545; height:1.242rem;}
+.sale_list li{ float:left; width:25%; text-align:center; line-height:1.242rem; font-size:0.54rem; }
+
+.sale_list li.selected{ border-bottom:1px solid #d2001e1; color:#d2001e; }
+
+.sale_cont{ margin:0.66rem;}
+.coupon_box{  border-radius:6px; width:100%; background:#fff; border:1px solid #efefef; font-size:0.486rem;}
+.coupon_box_body{ margin:0.33rem; left:20px; background:#fff;}
+.price_data{ padding-bottom:0.33rem;}
+.sale_tip{ border-top:1px solid #efefef;}
+.sale_tip p{ line-height:0.82rem;}
+.price{ font-size:1.32rem; color:#d2001e;}
+.date_num{ color:#999; line-height:0.95rem;}
+.sale_tip{ padding-top:0.33rem;}
+.sale_tip .click a{ color:#d2001e;}
+/*左侧花边*/
+.sale_left{}
+
+/*服务顾问*/
+
+.menu_list li.advise_list{ width:50%; float:left;}
+.adviser_img{ float:left; width:2.12rem; height:2.12rem; border-radius:50%; overflow:hidden; border:1px solid #efefef; margin-right:0.2rem;}
+.adviser_info{ margin-top:0.46rem; font-size:0.4rem;}
+.adviser_info .adviser_name{ font-size:0.486rem;}
+/*我的服务顾问*/
+.contact{ position:absolute; right:0.33rem; top:0.93rem;}
+.contact p{ display:inline-block; width:1.4rem; }
+.advise_change{ margin:0.33rem; font-size:0.4rem; color:#666;}
+.advise_change a{ color:#00b050;}
+.adviser_info p{ line-height: 0.8rem;}
+.name_selected{ font-size:0.486rem; background: url("../images/radio.png") no-repeat right center; background-size: 0.52rem; margin-right: 0.33rem; }
+.advise_tip{ background: url("../images/vip/adviser_tip.png") no-repeat left center; height:0.9834rem; line-height: 0.9834rem; background-size: 0.53rem; text-indent: 0.83rem;}
+
+/*banner*/
+.shop_banner{width:100%;}
+.shop_banner .banner_list{ width:100%;}
+.shop_menu{ width:100%;}
+.shop_menu li{ width:25%; font-size:0.486rem; float:left; line-height:1.44rem; text-align:center;}
+.shop_menu li.menu_active{  border-bottom:1px solid #d2001e;}
+.shop_menu li.menu_active a{ color:#d2001e;}
+
+/*我的投诉*/
+.static_list,.coupon_list{ padding-right:0.33rem; height:1.35rem; line-height:1.35rem; font-size:0.486rem; }
+.static_list li,.coupon_list li{ float:left; width:33.33%; text-align:center; font-size: 0.56rem; }
+.static_list li.assess_active,.coupon_list li.coupon_active{ color:#d2001e; border-bottom:1px solid #d2001e;}
+
+
+/*处理记录*/
+.be_complained{ padding:0.33rem; position:relative;}
+.be_img{ display:inline-block; width:2.4rem; height:2.4rem; border-radius:50%; border:1px solid #efefef; overflow:hidden;}
+.be_name{ display:inline-block;  position:absolute; top:1.2rem; padding-left:0.33rem; font-size: 0.468rem;}
+.be_time{ position:absolute; right:0.33rem; top:1.2rem; color:#999; }
+.handle{ padding: 0.33rem; line-height: 0.8rem; background: #f3f3f3; position: relative;}
+.handle:after{ content: ""; display: block; position: absolute; width:0; height: 0; border-left: 0.63rem solid transparent; border-right: 0.63rem solid transparent; border-bottom: 0.66rem solid #f3f3f3; top: -0.23rem; left: 0.33rem;}
+.pj{ width: 3.33rem; text-align: center; height: 0.8rem; line-height: 0.8rem; background:#d2001e; color: #fff; margin-right: 0.33rem; margin-top:0.66rem; float: right; border-radius: 3px; }
+.complain{ width: 100%; background: #fff; border-top: 1px solid #efefef; font-size: 0.468rem; position: fixed; z-index: 10; height: 1.5rem; line-height: 1.5rem; bottom: 0;}
+.revoke{ background: url("../images/vip/revoke.png") no-repeat 4.33rem center;  background-size: 0.82rem;}
+.close{  background: url("../images/vip/close.png") no-repeat 4.33rem center; background-size: 0.82rem; border-left: 1px solid #eee; }
+.complain .complain_handle > li{ text-align: center; }
+/*品牌活动*/
+/*.sale_list_active{ margin-left:0.33rem;}*/
+.sale_list_active .sale_item{ padding:4px 6px 0px; border-bottom:1px solid #efefef; position: relative;}
+.sale_list_active .sale_img{ float:left; overflow:hidden; }
+.sale_list_active .sale_img > img{ height:3rem; width:4.8rem; margin-top:3px; margin-right:0.33rem;}
+.sale_list_active .sale_info{ padding-left:10px;}
+.sale_list_active .sale_info_title{ margin-top:3px; color: #454545;  font-size:0.586rem; text-overflow: -o-ellipsis-lastline; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2;-webkit-box-orient: vertical; }
+.sale_list_active .sale_info_date{ font-size:0.486rem; color:#999; position:absolute; left: 5.43rem; bottom: 0.33rem;}
+
+/*投诉首页*/
+.c_index_list{ margin: 1.33rem auto; width: 70%;}
+.c_index_list li{ float: left; width: 3.33rem; height: 3.33rem; border-radius: 50%; background: #d2001e; text-align: center; color: #fff; font-size: 0.486rem;}
+.mine_img{ width: 1rem; height: 1rem; overflow: hidden; text-align: center; margin: 0 auto; padding-top: 0.83rem; padding-bottom: 0.13rem;}
+
+.online_img{ width: 1rem; height: 1rem; overflow: hidden; text-align: center; margin: 0 auto; padding-top: 0.63rem; padding-bottom: 0.33rem;}
+
+.tel_c{ position: fixed; bottom: 0; text-align: center; width: 100%; color: #b9b9b9; padding-bottom: 0.63rem;}
+.tel_c p{ line-height: 0.8rem;}
+/*调查问卷首页*/
+.bg{ width: 100%; height: 100%;}
+.pb{ width: 100%;}
+.ques_index{ }
+.ques_index h5{ font-size: 0.66rem; margin-left: 0.33rem;}
+.menu_list_checkbox{  padding: 0.56rem 0.33rem; }
+.menu_list_checkbox li{ float: left; margin-right: 0.6rem;}
+.menu_list_checkbox > li > label{ font-size: 0.586rem; line-height: 1.16rem;}
+.enter{ margin-left: 2.33rem; font-size: 0.486rem; background: #ebcc38; width: 3.9744rem; line-height: 1.02rem; text-align: center; border: 1px solid #2586bd; border-radius: 0.1rem; color: #4f4100;}
+/*调查问卷*/
+.ques_title{ background: 100%; padding: 0.33rem 0.33rem 0; background: #fff;}
+.ques_title > h4{ border-bottom: 1px solid #d2001e; background: url("../images/ques_icon.png") no-repeat left center; background-size: 1.001rem; padding-left: 1.1rem; line-height: 1.1rem; font-size: 0.56rem; font-weight: normal;}
+.ques_cont{ padding: 0.33rem; background: #fff; color: #666;  margin-bottom: 0.33rem; border-bottom: 1px solid #efefef;}
+.ques_cont.pad_top{ padding-top: 0.76rem;}
+.ask{ color: #666; position: relative;}
+.ques_list{ padding: 0.33rem 0 0.33rem 0.656rem; font-size: 0.486rem;}
+.ques_list li{ float: left;  line-height: 0.82rem; width: 49%;}
+.ques_list > li > select{ width: 100%; border: 1px solid #efefef; -webkit-appearance: none; -moz-appearance: none; padding: 0.23rem; font-size: 0.486rem;}
+/*.ask_num{ margin-right: 0.33rem; display: inline-block; float: left; background:#d2001e; color: #fff; width: 0.76rem; height: 0.76rem; font-style: normal; text-align: center; line-height: 0.76rem;}*/
+.ask_tim{ font-size: 0.486rem; padding-left: 0.856rem;}
+.ask_num{ font-style: normal; position: absolute; display: block; background: #d2001e;  left: 0; width: 0.686rem; color: #fff; text-align: center;  height: 0.686rem; line-height: 0.686rem; font-size: 0.4rem; }
+
+/*调查问卷二级菜单*/
+.second_menu{ background: #f3f3f3; position: relative; padding: 0.33rem 0; margin-top: 0.2rem;}
+.second_menu:after{content: ""; display: block; position: absolute; width:0; height: 0; border-left: 0.63rem solid transparent; border-right: 0.63rem solid transparent; border-bottom: 0.66rem solid #f3f3f3; top: -0.23rem; left: 0.33rem;}
+.second_ask,.second_ques_list{ padding:0 0.33rem;}
+.second_ques_list li{ float: left; line-height: 0.8rem; padding-top: 0.3rem; width: 49%;}
+.second_menu > .second_ques_list > li >input[type="text"]{ -webkit-appearance: none; -moz-appearance: none; border: none; border-bottom: 1px solid #ccc; padding: 0.12rem 0; background: rgba(255,255,255,0);}
+/*优惠券*/
+.coupon_cont_div{ width: 100%; position: relative; background:#fff; border-radius: 6px; border: 1px solid #efefef; height: 5.8rem; margin: 0.43rem auto;}
+.coupon_cont_div_left{ background: url("../images/coupon_selected.png") no-repeat left center; width: 2.3rem; height: 100%; color: #fff; background-size: 70%;}
+.coupon_cont_div_left_have{ background: url("../images/coupon_unselect.png") no-repeat left center; width: 2.3rem; height: 100%; color: #fff;  background-size: 70%; }
+.coupon_name{ padding-top: 1.2rem;  font-size: 0.73rem; padding-left:0.33rem;}
+
+.coupon_cont_div_right{ position: absolute; top: 0; left:2rem; font-size: 0.486rem; width: 75%;}
+.coupon_date,.coupon_num{ color: #666; line-height: 0.9rem;}
+.user_info{ border-top: 1px dashed #efefef; line-height: 0.8rem; margin-top: 0.45rem;}
+.user_info > p{ padding-top:0.33rem;}
+.user_info .coupon_give{ float: right;}
+.user_info .user_info_txt{ float: left;}
+.user_info .coupon_give a{ color:#d2001e; }
+/*优惠券使用说明*/
+.coupon_direction{ position: absolute; top: 0; left: 2rem; width: 75%;}
+
+.coupon_direction > dl{ padding: 0.33rem 0; line-height: 0.9rem;}
+.coupon_direction > dl > dt{ font-size: 0.486rem; color:#d2001e; }
+.ruturn{ background: url("../images/return.png") no-repeat right center; width: 100%; height: 0.621rem;}
+
+/*紧急救援*/
+.dealer_list{ padding:0.33rem 0.33rem 0.46rem; position:relative; border-bottom: 1px solid #efefef; height:2.2rem;}
+.dealer_list_w{ width:100%; }
+.co1_name{ font-size:0.55rem; padding-bottom:0.33rem; float:left;}
+.dealer_tel,.dealer_addr,.dealer_jl{ color:#999; font-size:0.4rem; }
+.dealer_jl{ padding-bottom:0.33rem; float:right; }
+
+.dealer_tel_icon{ width:1.23rem; height:1.23rem; position:absolute; right:0.33rem; top:1.35rem;}
+.dealer_co1{ float:left;}
+.dealer_other{ float:right; padding-right:0.6rem; }
+
+/*已绑定车辆*/
+
+.binding_list li{ border-bottom: 1px solid #efefef; padding: 0.33rem;}
+.binding_list p{ font-size: 0.486rem; line-height: 0.962rem;}
+.binding_list .main_info p{ font-size: 0.586rem;}
+.binding_list .dph p{ color: #666;}
+.binding_list .car_name,.binding_list .dph_name{ float: left;}
+.binding_list .car_num,.binding_list .dph_num{ float: right;}
+
+/*评价星级*/
+.att{ padding:0.33rem 0;}
+.att > p{ float:left; font-size:0.486rem; line-height:1.358rem;}
+.start_list{ float:left;}
+.start_list li{ float:left; width:1.475rem; background:url(../images/start_no.png) center no-repeat; background-size:0.9rem; height:1.358rem;}
+.start_list li.on{ background:url(../images/start_yes.png) center no-repeat; float:left; width:1.475rem; background-size:0.9rem; height:1.358rem;}
+
+/*品牌活动*/
+.active_index{ margin:0.66rem 0.33rem 0;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

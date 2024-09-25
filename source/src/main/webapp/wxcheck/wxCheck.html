@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>服务查询</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.11.1/js/md5.min.js"></script>
+    <style>
+        .errorDiv {
+            position: fixed;
+            top: 30%;
+            left: 0;
+            width: 100%;
+            transform: translateY(-.5rem);
+            display: none;
+        }
+
+        .icon {
+            display: block;
+            width: 1.2rem;
+            height: 1.2rem;
+            margin: .4rem auto;
+        }
+        .logoIcon{
+            display: block;
+            height: 1.2rem;
+            margin: .4rem auto;
+        }
+
+        .SpeakText {
+            font-size: 0.3rem;
+            text-align: center;
+            line-height: .54rem;
+            color: #1b6ad1;
+        }
+
+        .successDiv {
+            position: relative;
+            top: 25vh;
+            left: 0;
+            width: 100%;
+            transform: translateY(-.5rem);
+            display: none;
+        }
+
+        .carInfo {
+            padding: 1.3rem 0;
+            width: 4.2rem;
+            margin: 0 auto;
+            font-size: 0.28rem;
+            line-height: .5rem;
+            color: #000000;
+        }
+
+        .carInfo .label {
+            color: #999999;
+            width: 1.22rem;
+        }
+
+        .carInfo>div {
+            display: flex;
+        }
+    </style>
+    <script>
+        ; (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if (clientWidth >= 1500) {
+                        docEl.style.fontSize = "200px";
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+
+        })(document, window);
+        function getUrlKey(name) {
+            return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [, ""])[1].replace(/\+/g, '%20')) || null
+        }
+        function returnSignKey(data) {
+            let nonce = createNonce();//生成32
+            let appid = "allianzweb";
+            let appsecret = "Y1iQbLnMAQxQ56RWjIqErItcow7zKK2q";
+            let time = parseInt(new Date().getTime() / 1000);
+            console.log(`appid=${appid}&appsecret=${appsecret}&nonce=${nonce}&time=${time}&data=${data}`);
+            let sign = md5(`appid=${appid}&appsecret=${appsecret}&nonce=${nonce}&time=${time}&data=${data}`).toString().toUpperCase();
+            return {
+                appid, nonce, time, sign
+            }
+            // return {
+            //     appid: 'jchtest',
+            //     nonce: 'OE7U1NQHDlk2BDnDYsIVPPOAd3linwMp',
+            //     time: '1556694207',
+            //     sign: ''
+            //   };
+        }
+        function createNonce(len) {
+            len = len || 32;
+            var $chars = 'ABC1DEFGH2IJK3LMNOQP4RSTU5VWXYZab6cdef8ghij7kmlnopq9rest0uvwxyz';
+            var maxPos = $chars.length;
+            var pwd = '';
+            for (let i = 0; i < len; i++) {
+                pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+            }
+            return pwd;
+        }
+    </script>
+    <script src="./js/jquery-1.11.3.min.js"></script>
+</head>
+
+<body>
+    <div class="errorDiv">
+        <img src="./image/error.png" alt="" class="icon">
+        <p class="SpeakText">我们未能查询到您的有效服务记录，</p>
+        <p class="SpeakText">请与销售经销商洽询！</p>
+    </div>
+    <div class="successDiv">
+        <img src="./image/checkLogo.png" alt="" class="logoIcon">
+        <img src="./image/success.png" alt="" class="icon">
+        <!-- <p class="SpeakText">恭喜！</p> -->
+        <p class="SpeakText" id="content">感谢您购买BMW/MINI<span id="servername"></span>保障服务产品</p>
+        <div class="carInfo">
+            <div><span class="label">车型:</span><span class="value" id="car"></span></div>
+            <div><span class="label">车架号:</span><span class="value" id="vin"></span></div>
+        </div>
+    </div>
+</body>
+<script>
+    var baseUrl = "../"
+    $(function () {
+        var _data = {
+            contractno: getUrlKey('contractno')||''
+        }
+        var signKey = returnSignKey(JSON.stringify(_data));
+
+        signKey.data = {
+            contractno: getUrlKey('contractno')||''
+        }
+        let urls = ""
+        if(getUrlKey('contractno').indexOf('MT') > -1){
+            urls = 'mtadmin/selectContractAll'
+        }else{
+            urls = 'api/selectContractAll'
+        }
+        $.ajax({
+            type: 'POST',
+            url: baseUrl + urls,
+            data:{
+                data: JSON.stringify(
+                    signKey
+                )
+            },
+            dataType: 'json',
+            success: function (res) {
+                if(res.errcode&&res.errcode!='0'){
+                    alert(res.errmsg);
+                    return false;
+                }
+                if(res.recordcount==0){
+                    $('.errorDiv').show();
+                }else{
+                    var data=res.record[0];
+                    let brandObj = {
+                        'Mercedes-Benz':'奔驰',
+                        'mazda':'马自达',
+                        'MINI':'BMW/MINI',
+                        'BMW':'BMW/MINI',
+                    }
+                    $("#content").html("感谢您购买"+data.vbrand+"保障服务产品");
+                    if(data.vbrand!='BMW'&&data.vbrand!='MINI'){
+                        $(".logoIcon").hide();
+                    }
+                    $("#car").html(data.vehicletype);
+                    $("#vin").html(data.vin);
+                    $('.successDiv').show();
+                }
+            },
+            error: function (error) {
+                console.log(error);
+                alert("发生错误");
+            }
+        })
+    })
+</script>
+
+</html>

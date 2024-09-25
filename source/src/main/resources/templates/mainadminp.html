@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ZH-CN" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title th:text="${domainenter} eq '1' ? 'BMW/MINI Protection Service Program':'Specialty Line Pack for Porsche'">Specialty Line Pack for Porsche</title>
+    <!-- css -->
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/common.css">
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+    <script type="text/javascript" th:inline="javascript">
+        var domainenter=[[${domainenter}]];
+        function js_method(e, val) //回传方法用val接受后台代码ShowValue的执行结果
+        {   try {
+            localStorage.removeItem("billObj");
+            localStorage.removeItem("marketPage")
+            localStorage.removeItem("marketObj")
+            localStorage.removeItem("cliamDetailObj")
+            localStorage.removeItem("cliamObj")
+        } catch (error) {
+            
+        }
+            var clientWidth = document.documentElement.clientWidth || document.body.clientWidth;
+            var url = val + "?clientWidth=" + clientWidth;
+            setTimeout(function () {
+                $.post("import/clickmenu", { "agencyid": [[${ agencyid }]], "uid": [[${ tid }]], "name": $(e).text(), "url": val }, function () { });
+            }, 0);
+        }
+
+
+        function showNotice(title, msg, tourl) {
+            var Notification = window.Notification || window.mozNotification || window.webkitNotification;
+            if (Notification) {
+                Notification.requestPermission(function (status) {
+
+                    //status默认值'default'等同于拒绝 'denied' 意味着用户不想要通知 'granted' 意味着用户同意启用通知
+                    if ("granted" != status) {
+                        return;
+                    } else {
+                        var tag = "sds" + Math.random();
+                        var notify = new Notification(
+                            title, {
+                                dir: 'auto',
+                                lang: 'zh-CN',
+                                tag: tag, //实例化的notification的id
+                                icon: 'http://jchscrm.com/images/email90.png', //通知的缩略图,//icon 支持ico、png、jpg、jpeg格式
+                                body: msg //通知的具体内容
+                            }
+                        );
+                        notify.close();
+                        notify.onclick = function () {
+                            //如果通知消息被点击,通知窗口将被激活(例：原最小化窗口重新被激活)
+                            //                             var url = location.href;
+                            //                             window.close();
+                            //                             window.open(url, '_blank'); //可惜只有_blank才能激活最小化窗口
+                            document.getElementById("mainFrame").src = tourl;
+                            alert("请及时处理");
+                            window.focus();
+
+                        };
+                        notify.onerror = function () {
+                            console.log("HTML5桌面消息出错！！！");
+                        };
+                        notify.onshow = function () {
+                            setTimeout(function () {
+                                notify.close();
+                            }, 600000)
+                        };
+                        notify.onclose = function () {
+                            console.log("HTML5桌面消息关闭！！！");
+                        };
+                    }
+                });
+            } else {
+                console.log("您的浏览器不支持桌面消息");
+            }
+        };
+    </script>
+    <style type="text/css">
+        .header {
+            position: relative;
+            background: #FFF;
+            height: 80px;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.26);
+        }
+
+        .header_top {
+            min-width: 1200px;
+        }
+
+        .title {
+            line-height: 80px;
+            float: left;
+            margin: 0px 28px;
+            height: 80px;
+        }
+
+        .title .comp_name {
+            color: #000;
+            font-size: 1.4em;
+            display: inline-block
+        }
+
+        .title .logo1 {
+            color: #323639;
+            font-size: 1.6em;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .title .line {
+            display: inline-block;
+            margin: 0 18px 0 14px;
+            width: 1px;
+            height: 18px;
+            background: #1A2023;
+            vertical-align: middle;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        .top_info {
+            height: 80px;
+            line-height: 80px;
+        }
+
+        .top_info p,
+        .top_info .quite {
+            display: inline-block;
+            margin: 0 0 0 8px;
+            padding: 0 10px;
+        }
+        .top_info .quite {
+            color: #D5001C;
+        }
+
+        .top_info p i,
+        .top_info .quite i {
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            position: relative;
+            top: 8px;
+        }
+
+        .top_info p .code {
+            background: url(images/admin_bg.png) -104px -9px;
+        }
+
+        .top_info p .user {
+            background: url(images/icon_user.png);
+        }
+
+        .top_info .quite .exit {
+            background: url(images/admin_bg.png) -135px -6px;
+        }
+
+        .header:after {
+            clear: both;
+            content: "";
+            display: table;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .title .title_li li {
+            float: left;
+            line-height: 80px;
+        }
+
+        a.first-menu {
+            line-height: 40px;
+        }
+
+
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        dl,
+        dt,
+        dd,
+        ol,
+        nav ul,
+        nav li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+        }
+
+        body {
+            font-size: 14px;
+            font-family: "微软雅黑";
+        }
+
+        #modal {
+            visibility: hidden;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, .5)
+        }
+
+        .modal_nav {
+            width: 750px;
+            margin: 100px auto;
+            background-color: #fff;
+            border: 1px solid #000;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        .m_center {
+            width: 490px;
+            margin: 80px auto;
+            margin-bottom: 20px;
+        }
+
+        .m_but1,
+        .m_but2 {
+            width: 90px;
+            height: 30px;
+            border: none;
+            border-radius: 4px;
+            color: #333
+        }
+
+        .m_but1 {
+            background: #42b745;
+            color: #fff;
+        }
+
+        .m_but2 {
+            background: transparent;
+            border: 1px solid #ccc;
+        }
+
+        .hand {
+            cursor: pointer;
+        }
+        
+        .jumpButton>p>*{
+            background: #eea236;
+            cursor: pointer;
+            line-height: 25px;
+            display: block;
+            padding: 0 10px;
+            color: #fff;
+        }
+    </style>
+    <link rel="stylesheet" href="css/porscheMenu.css">
+    <style>
+        .logo1>img{
+            height: 62px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body class="index-body">
+    <div class="wrapper">
+        <!-- header -->
+            <div class="header">
+                <div class="header_top">
+                    <div class="title">
+                        <ul class="title_li">
+                            <li>
+                                <a class="logo1">
+                                    <img src="login/images/logoporsche.png" alt="">
+                                </a>
+                            </li>
+                            <li th:if="${name}!=''" style="padding:0 6px;"><i class="line"></i></li>
+                            <li><span class="comp_name" th:text="${name}"></span></li>
+                        </ul>
+                    </div>
+                        <div class="fr top_info">
+                            <ul class="top-menu">
+                                <li>
+                                    <p>
+                                        <i class="user"></i>
+                                        <span><span th:text="${act}"></span>：<span th:text="${username}"></span></span>
+                                    </p>
+                                </li>
+                                <!-- <li th:if="${showamount}==1">
+                                    <p><span th:text="余额"></span>：<span id="balance" th:text="${amount}"></span></span></p>
+                                </li>
+                                <li th:if="${showamount}==1" class="jumpButton">
+                                    <p><span th:text="预付" onclick="js_method(this,'./background/index.html#/addbalance');" ></span></p>
+                                </li> -->
+                                <li>
+                                    <p>
+                                        <a class="quite" href="javascript:void(0)" onclick="loginOut()">
+                                        <span class="comp_icon">退出</span></a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+        <!-- container -->
+        <div id="container" class="">
+            <!-- sidebar -->
+
+            <div id="Label1">
+                <div class="sidebar mCustomScrollbar _mCS_1 mCS_no_scrollbar" style="height: 868px;">
+                    <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" tabindex="0">
+                        <ul class="menu">
+                            <li th:each="menu,menuStat:${firstmenu}"
+                                th:class="${menuStat.index}==0?'active open':''"><em th:if="${menuStat.index}==0"
+                                    class="icon ic-active"></em><a class="first-menu" href="javascript:;"
+                                    data-idx="1"><em class="icon ic-left"></em><em class="icon-menu1 "
+                                        th:attrappend="class=${'ic-'+menu.mainword}"></em><span
+                                        class="first-menu-name" th:text="${menu.menutext}"></span></a>
+                                <ul class="sub-menu" style="">
+                                    <li th:each="node,nodeStat:${menumap[''+menu.menuno]}"><a class="second-menu"
+                                            href="javascript:;"
+                                            th:attr="data-url=${node.url},onclick='js_method(this,\''+${node.url}+'\');',data-idx=${nodeStat.index} "><em
+                                                class="icon-menu2 "
+                                                th:attrappend="class=${'ic-'+node.mainword}"></em><span
+                                                th:text="${node.menutext}"></span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu_btn">
+                    <a class="btn btn-menu-toggle" href="javascript:;" style="margin: 25px 30px 0px 10px;"></a>
+                    <p style="color: white;padding: 10px;">服务热线：400 606 3136<br/>服务邮箱：porsche.service@allianz.com</p>
+<!--                    <a class="btn-menu-learning" href="http://allianz.chinaopenschool.com" target="_blank">E-learning</a>-->
+                </div>
+            </div>
+            <div class="main">
+
+
+                <iframe class="mainFrame" id="mainFrame" name="mainFrame" src="about:blank" frameborder="0"
+                    style="height: 826px;"></iframe>
+
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/layout.js"></script>
+
+
+    <script>
+        function overlay() {
+            var e1 = document.getElementById('modal');
+            e1.style.visibility = (e1.style.visibility == "visible") ? "hidden" : "visible";
+        }
+
+        function gotoxf() {
+            document.getElementById("mainFrame").src = "recharge/PayCheck.aspx";
+            overlay();
+        }
+        function loginOut(){
+            localStorage.removeItem("saveSecond");
+            localStorage.removeItem("saveSecond2");
+            location.href="login/loginout"
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+.sidebar {
+  background: #1A2023 !important;
+}
+a.first-menu {
+  height: 56px !important;
+  line-height: 56px !important;
+  background: #1A2023 !important;
+}
+.sub-menu {
+  padding: 0 !important;
+  border-bottom: none !important;
+  background: #1A2023 !important;
+}
+a.second-menu {
+  height: 56px !important;
+  line-height: 56px !important;
+}
+li.active a.first-menu {
+  background: #1A2023 !important;
+}
+a.sub-active, a.sub-active:hover{
+  background: #323639 !important;
+}
+.ic-down, .ic-left{
+  margin-top: 20px !important;                                                                                                                                          
+}
+a.second-menu{
+  padding-left: 60px !important;
+}
+a.second-menu:hover {
+  background: #323639 !important
+}
+.sidebar{
+  width: 280px !important;
+}
+.btn-menu-toggle:hover, .btn-menu-toggle2:hover{
+  background-position: 0 -180px !important;
+}
+.btn-menu-toggle, .btn-menu-toggle2{
+  background-position: 0 -210px !important;
+}
+.main{
+  margin-left: 280px;
+}
+.btn-menu-toggle{}
+.btn-menu-learning{
+  position: fixed;
+}
+.menu_btn{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 280px;
+  background: #1A2023;
+}
+.menu_btn .btn-menu-toggle{
+  margin: 18.5px 33px;
+}
+.btn-menu-learning{
+  margin: 20px 32px;
+  line-height: 24px;
+  color: #96989A;
+  text-decoration: underline;
+}
+.icon-menu1, .icon-menu2{
+  margin: 20px 20px 0 0 !important;
+}
+.menu{
+  padding-bottom: 100px;
+}
+
+.fold .sidebar {
+  width: 88px !important;
+}
+.fold .menu_btn{
+  left: -192px;
+}
+.fold .icon-menu1, .icon-menu2{
+  margin: 19px !important;
+}
+.fold .main{
+  margin-left: 88px;
+}

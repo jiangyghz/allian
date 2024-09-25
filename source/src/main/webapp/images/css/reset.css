@@ -1,0 +1,10 @@
+html{display:block;}
+body{ font-size: 0.4rem; background-color: #f3f3f3; -webkit-text-size-adjust:none; font-weight: normal; color: #454545; font-family: "微软雅黑","Microsoft Yahei UI", "Microsoft YaHei"; }
+body,dl,dd,h1,h2,h3,h4,h5,h6,p,form{ margin: 0;}
+ol,ul{ margin: 0; padding: 0; list-style: none;}
+.clearfix{ zoom: 1;}
+.clearfix:after{ display: block; clear: both; content: ""; visibility: hidden; height: 0;}
+img{ width: 100%;}
+/*点击去掉边框或半透明灰色遮罩*/
+a{ text-decoration: none; color: #454545;}
+textarea{ -webkit-appearance: none;}

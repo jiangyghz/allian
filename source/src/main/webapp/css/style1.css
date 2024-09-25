@@ -1,0 +1,197 @@
+﻿* {
+	margin:0 auto;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*客户信息*/
+.w_info p{ line-height:36px;}
+
+/*收款信息*/
+.clearfix::before,.clearfix::after{ content:""; display:table;}
+.clearfix::after{ clear:both;}
+body{ background-color:#ececec; font-family:'Microsoft Yahei UI', 'Microsoft YaHei', Helvetica, '宋体', Arial, sans_serif; font-size:1em; color:#333;}
+#wrapper{ width:96%; margin:4% auto;}
+#wrapper .input_info{ margin-bottom:5%; border-radius:5px; background:#fff; box-shadow:0 0 2px rgba(0, 0, 0, .5); -webkit-box-shadow:0 0 2px rgba(0, 0, 0, .5); -moz-box-shadow:0 0 2px rgba(0, 0, 0, .5);}
+.input_info h3{ background:#428bca; width:30%; line-height:32px; text-align:center; font-size:1.1em; color:#fff; margin-left:5%;}
+.input_info .w_info{ width:90%; margin:3% auto; padding-bottom:2%;}
+.w_info table tr{ line-height:50px;}
+.w_info table tr input[type='text']{ height:32px; line-height:32px; width:100%; border:0; outline:none; border-bottom:1px solid #bebebe; font-size:1em;}
+.sale_list{ margin:3% 0; border-top:1px solid #bebebe; display:none;}
+.sale_list li{ padding-top:3%;}
+.sale_title .s_title{ background:url(icon.png) no-repeat right center; background-size:20px 20px;}
+.sale_title .s_title.change{ background:url(icon1.png) no-repeat right center; background-size:20px 20px;}
+.btn{ width:100%; margin:15% auto 25%; border-radius:5px;}
+.btn p{ width:100%; line-height:40px; color:#fff; font-weight:bold; letter-spacing:1em;  background:#83cf51; text-align:center;   }
+/*选择*/
+.check-box input[type="checkbox"] {
+    visibility: hidden;
+}
+/*Custom checkbox*/
+ .check-box {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 2px 7px 0 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 1px #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+   background:url(../select.png) no-repeat;
+}
+.check-box i {
+    background: url('css/check_mark.png') no-repeat center center;
+    position: absolute;
+    left: 3px;
+    bottom: -15px;
+    width: 16px;
+    height: 16px;
+    opacity: .5;
+    -webkit-transition: all 400ms ease-in-out;
+    -moz-transition: all 400ms ease-in-out;
+    -o-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
+    -webkit-transform:rotateZ(-180deg);
+    -moz-transform:rotateZ(-180deg);
+    -o-transform:rotateZ(-180deg);
+    transform:rotateZ(-180deg);
+}
+.checkedBox {
+    -moz-box-shadow: inset 0 0 5px 1px #ccc;
+    -webkit-box-shadow: inset 0 0 5px 1px #ccc;
+    box-shadow: inset 0 0 5px 1px #ccc;
+    border-bottom-color: #fff;
+}
+.checkedBox i {
+    bottom: 2px;
+    -webkit-transform:rotateZ(0deg);
+    -moz-transform:rotateZ(0deg);
+    -o-transform:rotateZ(0deg);
+    transform:rotateZ(0deg);
+}
+/*选择结束*/
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	color: #b63b4d;
+	text-decoration: none;
+}
+
+/** =======================
+ * Contenedor Principal
+ ===========================*/
+h1 {
+ 	color: #FFF;
+ 	font-size: 24px;
+ 	font-weight: 400;
+ 	text-align: center;
+ 	margin-top: 80px;
+ }
+
+h1 a {
+ 	color: #c12c42;
+ 	font-size: 16px;
+ }
+
+ .accordion {
+ 	width: 100%;
+ 	/*max-width: 360px;*/
+ 	
+ 	background: #FFF;
+ 	-webkit-border-radius: 4px;
+ 	-moz-border-radius: 4px;
+ 	border-radius: 4px;
+ }
+
+.accordion .link {
+	cursor: pointer;
+	display: block;
+	padding: 15px 15px 10px;
+	color: #4D4D4D;
+	font-size: 1em;
+	font-weight: 600;
+	border-bottom: 1px solid #CCC;
+	position: relative;
+	-webkit-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+.accordion li:last-child .link {
+	border-bottom: 0;
+}
+
+.accordion li i {
+	position: absolute;
+	top: 16px;
+	left: 12px;
+	font-size: 18px;
+	color: #bebebe;
+	-webkit-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+.accordion li i.fa-chevron-down {
+	right: 12px;
+	left: auto;
+	font-size: 16px;
+}
+
+.accordion li.open .link {
+	color: #333;
+}
+
+.accordion li.open i {
+	color: #bebebe;
+}
+.accordion li.open i.fa-chevron-down {
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+/**
+ * Submenu
+ -----------------------------*/
+ .submenu {
+ 	
+ 	background: #b7b7b7;
+ 	font-size: 1em;
+	
+ }
+
+ .submenu li {
+ 	border-bottom: 1px solid #b7b7b7;
+	line-height:40px;
+	color:#fff;
+	width:90%;
+	position:relative;
+	
+ }
+
+ .submenu a {
+ 	display: block;
+ 	text-decoration: none;
+ 	color: #d9d9d9;
+ 	padding: 12px;
+ 	padding-left: 42px;
+ 	-webkit-transition: all 0.25s ease;
+ 	-o-transition: all 0.25s ease;
+ 	transition: all 0.25s ease;
+ }
+
+ /*.submenu a:hover {
+ 	background: #b63b4d;
+ 	color: #FFF;
+ }
+*/

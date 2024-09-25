@@ -1,0 +1,275 @@
+﻿<!DOCTYPE html>
+<html lang="ZH-CN">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link href="../css/bootstrap.min.css" rel="stylesheet">
+     <link href="./css/public.css" type="text/css" rel="stylesheet" />
+     <link href="./css/reset.css" type="text/css" rel="stylesheet" />
+     <link href="./css/main.css" type="text/css" rel="stylesheet" />
+     <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+
+     <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+     <script src="../js/base64.min.js"></script>
+     <title>后台管理登录界面</title>
+     <style>
+          .login_c {
+               top: 85px;
+          }
+
+          .footer {
+               height: 69px;
+          }
+
+          .footer_1200 {
+               margin-top: 15px;
+          }
+
+          .login_right {
+               background: rgba(255, 255, 255, 0.5);
+               border: 1px solid rgba(255, 255, 255, 0.7);
+          }
+
+          .login_right input{
+               background: none;
+               color: #fff;
+          }
+          .login_right input::-webkit-input-placeholder { /* WebKit browsers */
+               color: #FFF; }
+          .login_right input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+               color: #FFF; }
+          .login_right input::-moz-placeholder { /* Mozilla Firefox 19+ */
+               color: #FFF; }
+          .login_right input:-ms-input-placeholder { /* Internet Explorer 10+ */
+               color: #FFF; }
+          .login_right input:focus::-webkit-input-placeholder{ color:#FFF; }
+
+          .login_right .login_PT {
+               background: none;
+               border-radius: 0;
+          }
+
+          .sr3 {
+               background: url(./images/banz_icon_user.png) no-repeat;
+          }
+
+          .sr4 {
+               background: url(./images/banz_icon_pwd.png) no-repeat;
+          }
+
+          .login_btn {
+               background: #FFF;
+          }
+
+          .login_btn .login_btn_submit {
+               background: #000;
+          }
+          .login_tip {
+               color: #FFF;
+          }
+          .login_tip:focus,.login_tip:hover {
+               color: #000;
+          }
+          
+
+          @media screen and (min-width:1151px) and (max-width: 1600px) {
+               .login_right {
+                    transform: scale(0.8);
+                    transform-origin: 0px 0px;
+               }
+          }
+          
+          @media screen and (max-width: 1150px) {
+               .login_right {
+                    transform: scale(0.7);
+                    transform-origin: 0px 0px;
+               }
+          }
+          .modal .checkbox1{ width:20px; height: 20px;-webkit-appearance:checkbox;appearance:checkbox;-moz-appearance:checkbox; vertical-align:middle; margin: 0 2px 0 1px;}
+          @media (min-width: 768px) {
+               .modal-dialog {
+                    margin: 130px auto;
+               }
+          }
+          @media (min-width: 768px){
+               .modal-sm{ width:400px;}
+          }
+          .modal-footer .btn-primary{ background-color: #1c69d3;border-color: #1c69d3;width:100%;}
+
+          .footer_1200 a{text-decoration:underline;}
+          .login_right{
+               position: relative;
+          }
+          .login_right::before{
+               content: '';
+               position: absolute;
+               bottom: -1px;
+               left: -1px;
+               width: 40px;
+               height: 40px;
+               border-left: 3px solid #fff;
+               border-bottom: 3px solid #fff;
+          }
+          .login_right::after{
+               content: '';
+               position: absolute;
+               bottom: -1px;
+               right: -1px;
+               width: 40px;
+               height: 40px;
+               border-right: 3px solid #fff;
+               border-bottom: 3px solid #fff;
+          }
+          .login_PT{
+               position: relative;
+          }
+          .login_PT::before{
+               content: '';
+               position: absolute;
+               top: -1px;
+               left: -1px;
+               width: 40px;
+               height: 40px;
+               border-left: 3px solid #fff;
+               border-top: 3px solid #fff;
+          }
+          .login_PT::after{
+               content: '';
+               position: absolute;
+               top: -1px;
+               right: -1px;
+               width: 40px;
+               height: 40px;
+               border-right: 3px solid #fff;
+               border-top: 3px solid #fff;
+          }
+          .login_title{
+               position: fixed;
+               top: 60px;
+               left: 40px;
+               color: #FFF;
+               font-size: 55px;
+          }
+     </style>
+</head>
+
+<body>
+     <form id="form1">
+          <div class="login_bg"><img src="./images/banz_bg.png" style="display:block;"></div>
+          <div class="login_title">
+               奔驰保障服务产品平台
+          </div>
+          <div class="login_c" style="top:150px!important">
+               <div class="w1200 clearfix">
+                    <div class="login_right">
+                         <div class="login_PT">平台登录</div>
+                         <div class="login_input_panel">
+                              <div class="qydm">
+                                   <div class="sr3">
+                                        <input ID="username" name="username" Width="305px" Height="32px"
+                                             placeholder="邮箱" />
+                                   </div>
+                              </div>
+                              <div class="qydm">
+                                   <div class="sr4">
+                                        <input ID="password" name="password" Width="305px" Height="32px" type="password"
+                                             TextMode="Password" placeholder="密码" />
+                                   </div>
+                              </div>
+                              <div class="login_btn">
+                                   <div ID="btnSumbit" class="login_btn_submit" Text="">登&nbsp;&nbsp;&nbsp;&nbsp;录</div>
+                              </div>
+                              <a class="login_tip" href="forget3">忘记密码</a>
+                         </div>
+                         <!-- <div class="school"><a href="http://allianz.chinaopenschool.com" target="_blank">E-learning</a></div> -->
+                    </div>
+               </div>
+          </div>
+          <!--底部-->
+          <div class="footer">
+               <div class="footer_1200  clearfix">
+
+                    <p>版权所有：Copyright© 2019 Allianz. All Rights Reserved. &nbsp;京ICP备09063826号-33&nbsp;<a target="_blank" href="../download/conditions_BENZ.pdf">用户条款和条件及隐私声明与个人信息处理协议</a></p>
+               </div>
+          </div>
+          <div class='modal fade' id='modal1' tabindex='-1' role='dialog'  aria-hidden='true' ><div class='modal-dialog modal-sm' role='document'>
+               <div class='modal-content' >
+                    <div class="modal-header" style="color:#fff; text-align:center; background:#1c69d3;border-radius:6px 6px 0 0;" >
+                         <h4 class="modal-title" id="exampleModalLabel" >注意事项</h4>
+                    </div>
+               <div class="modal-body" id="userbody" style=" overflow:auto;">
+                    <div style="height: 100px;">
+                         <input type="checkbox" class="checkbox1" id="conditions" name="conditions" />
+                    请您仔细阅读<a target="_blank" href="../download/conditions_BENZ.pdf">用户条款和条件及隐私声明与个人信息处理协议</a>，勾选同意后您才能继续登录使用本网站。
+                    </div>
+               </div>
+               <div class="modal-footer" style="text-align:center;">
+                    <button type="button" class="btn btn-primary" id="btncheck" disabled="disabled">继续</button>
+               </div>
+          </div></div></div>
+     </form>
+     <script>
+          var urls="";
+          var login = function () {
+               // if($("#userid").val()==""){
+               //      $("#userid").focus();
+               //      return;
+               // }
+               if ($("#username").val() == "") {
+                    $("#username").focus();
+                    return;
+               }
+               if ($("#password").val() == "") {
+                    $("#password").focus();
+                    return;
+               }
+               if($("#password").val()!="") {
+                    var pwd = $("#password").val();
+                    $("#password").val(Base64.encode(pwd));
+               }
+               $.post("../login/login", $("#form1").serialize(), function (data) {
+                    if (data.code == 1) {
+                         if (data.data == 0) {
+                              urls=data.msg;
+                              $("#modal1").modal();
+                         } else {
+                              location.href = "../" + data.msg;
+                         }
+                    }else if(data.code==2){
+                         alert("已超过90天没有修改密码,请修改密码");
+                         location.href = "../" + data.msg;
+                    }
+                    else {
+                         alert(data.msg);
+                    }
+               }, "json");
+          };
+          $(function () {
+
+               $(window).bind("keydown", function (event) {
+                    var event = event || window.event;
+                    if (event.keyCode == 13) {
+                         login();
+                    }
+               });
+               $("#btnSumbit").click(function () {
+                    login();
+               });
+               $("#conditions").change(function () {
+                    var val=this.checked;
+                    if(val){
+                         $("#btncheck").removeAttr("disabled");
+                    }else{
+                         $("#btncheck").attr("disabled","disabled");
+                    }
+               });
+               $("#btncheck").click(function () {
+                    location.href = "../" + urls;
+               });
+          })
+     </script>
+</body>
+
+</html>

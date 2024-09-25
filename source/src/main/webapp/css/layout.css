@@ -1,0 +1,3168 @@
+﻿@charset "utf-8";
+
+/* ===========common=========== */
+body,
+p,
+ul,
+li,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd,
+form,
+iframe,
+span,
+input,
+textarea,
+select,
+button,
+div,
+b,
+i,
+table,
+td,
+tr,
+th {
+    font-family: Arial, "微软雅黑";
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f1f3fa;
+}
+
+body.index-body {
+    overflow: hidden;
+}
+
+body.guide-body {
+    background: #fff;
+    min-height: 600px;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+img {
+    border: none;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    color: #006cd1;
+}
+
+:focus {
+    outline: 0;
+}
+
+.e-hide {
+    display: none;
+}
+
+.e-block {
+    display: block;
+}
+
+.e-noborder {
+    border: none 0;
+}
+
+.wrapper {
+    min-width: 430px;
+}
+
+/* ====================guide=================== */
+.guide-header {
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+
+.guide-logo {
+    display: block;
+    max-width: 100%;
+    cursor: default;
+    width: 945px;
+    margin: 0 auto;
+}
+
+.guide-header p {
+    position: absolute;
+    left: 70%;
+    top: 27px;
+}
+
+.btn-guide {
+    display: inline-block;
+    padding: 7px 18px;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 3px;
+    margin-right: 10px;
+    background: #f3d532;
+}
+
+.btn-lg {
+    background: #fa944d;
+}
+
+.btn-reg:hover {
+    background: #fedf36;
+}
+
+.btn-lg:hover {
+    background: #ff9b55;
+}
+
+.guide-banner {
+    width: 100%;
+}
+
+.guide-banner img.banner {
+    max-width: 100%;
+}
+
+.guide-focus {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.focus_piclist {
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.focus_piclist li {
+    float: left;
+    width: 100%;
+    display: none;
+}
+
+.focus_piclist li.cur1 {
+    display: block;
+}
+
+.focus_piclist img {
+    max-width: 100%;
+}
+
+.focus_page {
+    position: absolute;
+    bottom: 30px;
+    left: 42%;
+}
+
+.focus_page li {
+    float: left;
+    width: 17px;
+    height: 17px;
+    background: url(../images/icon2.png) no-repeat -250px -50px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.focus_page li.cur2 {
+    background-position: -300px -50px;
+}
+
+.guide-footer-bg {
+    width: 100%;
+    background: #000;
+}
+
+.fixed {
+    position: fixed;
+    bottom: 0;
+}
+
+.guide-footer-bg p.copy {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+}
+
+/* ==================register================== */
+.reg {
+    min-height: 400px;
+    width: 450px;
+    margin: 0 auto;
+    padding: 25px 0 145px;
+}
+
+.reg-title,
+.resetPwd-title {
+    height: 28px;
+    width: 166px;
+    background: url(../images/bg.png) 0 -199px no-repeat;
+    text-indent: -9999px;
+    margin-bottom: 7px;
+}
+
+.resetPwd-title {
+    width: 140px;
+    background-position: 0 -250px;
+}
+
+.reg-con {
+    float: left;
+}
+
+.reg-con .item {
+    float: left;
+    width: 100%;
+    line-height: 25px;
+    padding-top: 18px;
+    position: relative;
+    margin-bottom: 2px;
+}
+
+.error-sign {
+    position: absolute;
+    left: 100px;
+    top: -2px;
+    color: #f00;
+    font-size: 12px;
+    display: none;
+}
+
+.error-icon {
+    float: left;
+    width: 12px;
+    height: 12px;
+    background: url(../images/icon2.png) -300px 0 no-repeat;
+    margin: 6px 5px 0 0;
+}
+
+.label-normal {
+    float: left;
+    font-size: 14px;
+    color: #333;
+    text-align: right;
+    padding-right: 10px;
+    width: 100px;
+}
+
+.txt-normal {
+    float: left;
+    width: 297px;
+    padding: 0 3px;
+    height: 25px;
+    border: 1px solid #c1c3c8;
+    color: #333;
+}
+
+.sel-theme1 {
+    float: left;
+    width: 200px;
+}
+
+.addr-group {
+    margin-left: 100px;
+}
+
+.sel-theme2 {
+    float: left;
+    width: 95px;
+    margin-right: 10px;
+}
+
+.txt-short {
+    width: 192px;
+}
+
+.btn-theme1 {
+    display: inline-block;
+    background: #13b9b0;
+    color: #fff;
+    text-align: center;
+    border: 0 none;
+    height: 27px;
+    line-height: 27px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.btn-theme1:hover {
+    background: #0db3aa;
+}
+
+.btn-sendcode,
+.btn-resetPwd {
+    width: 95px;
+    margin-left: 10px;
+}
+
+.btn-sendcodedisabled,
+.btn-resetPwddisabled {
+    background: #c8c6c6;
+}
+
+.btn-sendcodedisabled:hover,
+.btn-resetPwddisabled:hover {
+    background: #c8c6c6;
+    cursor: not-allowed;
+}
+
+.btn-post {
+    width: 200px;
+    letter-spacing: 5px;
+    margin: 30px 0 0 150px;
+}
+
+
+
+
+
+
+
+
+/* ====================header=================== */
+#header {
+    height: 46px;
+    background: #2b3643;
+}
+
+.logo {
+    float: left;
+    color: #1caf9a;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 14px 0 0 20px;
+}
+
+.logo span {
+    color: #1caf9a;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.top-menu {
+    float: right;
+}
+
+.top-menu>li {
+    float: left;
+    position: relative;
+}
+
+.top-menu .btn {
+    float: left;
+    width: 41px;
+    height: 46px;
+    color: #bccfda;
+    background: url(../images/icon2.png) no-repeat;
+    cursor: pointer;
+}
+
+.top-menu .btn-message {
+    background-position: 11px 17px;
+}
+
+.top-menu .btn-exit {
+    background-position: -40px 17px;
+}
+
+.top-menu .btn-message:hover,
+.top-menu .btn-exit:hover,
+.top-menu .cur {
+    background-color: #3f4f62;
+}
+
+.top-menu .btn-godms {
+    background-position: -390px -83px;
+    text-indent: -9999px;
+}
+
+.top-menu .btn-gowx {
+    background-position: -390px -33px;
+    text-indent: -9999px;
+}
+
+.ic-msg-count {
+    float: left;
+    padding: 0 6px;
+    line-height: 18px;
+    height: 18px;
+    border-radius: 30px;
+    background: #1caf9a;
+    font-style: normal;
+    font-size: 12px;
+    position: relative;
+    left: 1px;
+    top: 10px;
+}
+
+.top-menu-sub {
+    position: absolute;
+    top: 50px;
+    left: -213px;
+    width: 255px;
+    z-index: 1000;
+    display: none;
+}
+
+.top-menu-sub h2 {
+    line-height: 44px;
+    background: #eaedf2;
+    border: 1px solid #e7eaf0;
+    border-bottom: none 0;
+    padding-left: 15px;
+}
+
+.ic-arrow-up {
+    position: relative;
+    float: right;
+    top: -7px;
+    right: 13px;
+    width: 14px;
+    height: 7px;
+    background: url(../images/icon.png) 0 -150px;
+}
+
+.top-sublist {
+    background: #fff;
+    border: 1px solid #e7eaf0;
+    border-top: none 0;
+}
+
+.top-sublist li {
+    padding: 15px;
+    line-height: 25px;
+    border-bottom: 1px solid #eff2f6;
+    color: #999;
+}
+
+.top-sublist span {
+    float: right;
+    padding: 0px 4px;
+    background: #f5f5f5;
+    color: #acacac;
+}
+
+.top-sublist img {
+    float: left;
+    margin-right: 10px;
+}
+
+
+
+
+
+/* =================container================= */
+.sidebar {
+    float: left;
+    width: 235px;
+    background: #364150;
+}
+
+.btn {
+    float: left;
+    border: none;
+    background: none;
+}
+
+.btn-menu-toggle,
+.btn-menu-toggle2 {
+    float: right;
+    width: 30px;
+    height: 27px;
+    background: url(../images/icon.png) 0 -180px no-repeat;
+    margin: 15px 19px 10px 0;
+}
+
+.btn-menu-toggle2 {
+    margin: 9px 13px 0 3px;
+    display: none;
+}
+
+.btn-menu-toggle:hover,
+.btn-menu-toggle2:hover {
+    background-position: 0 -210px;
+}
+
+.menu {
+    clear: both;
+    width: 100%;
+}
+
+.menu>li {
+    position: relative;
+    z-index: 0;
+}
+
+.menu a {
+    color: #b4bcc8;
+    display: block;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+a.first-menu {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    position: relative;
+    background: #364150;
+    z-index: 100;
+}
+
+.sub-menu {
+    padding: 7px 0;
+    border-bottom: 1px solid #3d4957;
+    display: none;
+    background: #364150;
+    zoom: 1;
+}
+
+.sub-menu li {
+    margin-top: 1px;
+}
+
+a.second-menu {
+    padding-left: 40px;
+    height: 32px;
+    line-height: 32px;
+    color: #fff;
+}
+
+/*菜单高亮*/
+a.second-menu:hover {
+    background: #3e4b5c;
+}
+
+a.sub-active,
+a.sub-active:hover {
+    background: #1caf9a;
+}
+
+/*当前二级菜单高亮*/
+li.active a.first-menu {
+    background: #28303b;
+    color: #b4bcc8;
+}
+
+/*当前一级菜单高亮*/
+/*li.active .ic-active{display:block;}*/
+li.active .sub-menu {
+    display: block;
+}
+
+/*当前二级菜单显示*/
+
+/* =============icon================ */
+.icon {
+    float: left;
+}
+
+/*.ic-active{position:absolute;height:0;right:0;top:12px;border:8px solid transparent;border-right-color:#f1f3fa;display:none;z-index:1000;}菜单右侧缺省三角*/
+.ic-down,
+.ic-left {
+    float: right;
+    width: 10px;
+    height: 10px;
+    background: url(../images/icon.png) 0 -75px;
+    margin-top: 15px;
+}
+
+.ic-down {
+    background-position: 0 -60px;
+    margin-top: 18px;
+}
+
+.icon-menu1,
+.icon-menu2 {
+    float: left;
+    width: 18px;
+    height: 18px;
+    background: url(../images/icon.png);
+    margin: 12px 11px 0 0;
+}
+
+.icon-menu2 {
+    margin: 8px 7px 0 0;
+}
+
+/*动态生成的菜单图标样式*/
+
+.ic-SystemShowAll {
+    background-position: -780px -180px;
+}
+
+/*公告管理*/
+.ic-SystemShowDetail,
+.ic-CommList {
+    background-position: -780px -150px;
+}
+
+/*配件直营店首页消息通知、常用语*/
+
+
+
+
+
+.ic-Main {
+    background-position: -30px 0;
+}
+
+/*主页-ok*/
+.ic-business {
+    background-position: -60px -210px;
+}
+
+/*资料*/
+.ic-Contract {
+    background-position: -180px 0;
+}
+
+/*系统公告*/
+.ic-Bill {
+    background-position: -180px -30px;
+}
+
+/*使用技巧*/
+.ic-Claim {
+    background-position: -330px 0;
+}
+
+/*操作说明*/
+.ic-Unload_data2 {
+    background-position: -720px 0;
+}
+
+/*常用文档下载*/
+.ic-PromotionReward {
+    background-position: -720px -240px;
+}
+
+/*本月促销活动和奖励政策*/
+.ic-report {
+    background-position: -780px -210px;
+}
+
+/*配件成本变动通知*/
+
+.ic-Product {
+    background-position: -30px -30px;
+}
+
+/*维修*/
+.ic-MaintenanceOrder {
+    background-position: -180px -60px;
+}
+
+/*接车*/
+.ic-Settlement {
+    background-position: -180px -90px;
+}
+
+/*结算*/
+.ic-Appoint {
+    background-position: -180px -120px;
+}
+
+/*预约*/
+.ic-MaintenanceQuery {
+    background-position: -180px -150px;
+}
+
+/*查询*/
+.ic-Remind {
+    background-position: -180px -180px;
+}
+
+/*提醒*/
+.ic-InvestFeedback {
+    background-position: -510px -150px;
+}
+
+/*反馈处理*/
+.ic-CarLoad {
+    background-position: -150px -270px;
+}
+
+/*车辆导入*/
+.ic-Unsettlement {
+    background-position: -150px -90px;
+}
+
+/*反结算*/
+.ic-Menu {
+    background-position: -150px -120px;
+}
+
+/*工时明细*/
+.ic-veiMorder,
+.ic-main-srhRepairVei {
+    background-position: -120px -150px;
+}
+
+/*VEI维修查询*/
+.ic-MaintenanceOrderCopy {
+    background-position: -720px -30px;
+}
+
+/*结算清单*/
+.ic-insurance {
+    background-position: -840px -240px;
+}
+
+/*工单提交*/
+
+.ic-Customer,
+.ic-Potential_customers {
+    background-position: -60px -240px;
+}
+
+/*客户、客户管理、潜客管理*/
+.ic-ArchivesList,
+.ic-Archive {
+    background-position: -900px -120px;
+}
+
+/*潜在客户档案*/
+.ic-ServerList,
+.ic-Serverlist {
+    background-position: -900px -150px;
+}
+
+/*销售顾问回访、潜客访问记录*/
+.ic-ServerWeeklist {
+    background-position: -900px -180px;
+}
+
+/*潜客待访列表*/
+.ic-LoseList {
+    background-position: -930px -210px;
+}
+
+/*战败申请列表*/
+.ic-OrderList {
+    background-position: -1020px 0;
+}
+
+/*订单管理*/
+
+.ic-Parts {
+    background-position: -30px -60px;
+}
+
+/*配件*/
+.ic-PartsIn {
+    background-position: -180px -210px;
+}
+
+/*入库*/
+.ic-PartsOut {
+    background-position: -300px -150px;
+}
+
+/*出库*/
+.ic-Picking,
+.ic-MorderPartList {
+    background-position: -180px -240px;
+}
+
+/*领料*/
+.ic-PartsBack {
+    background-position: -150px -60px;
+}
+
+/*领料退库*/
+.ic-PartsLoad {
+    background-position: -150px -240px;
+}
+
+/*配件导入*/
+.ic-PartsOrder {
+    background-position: -150px 0;
+}
+
+/*订货分析*/
+.ic-PartsGet {
+    background-position: -120px -60px;
+}
+
+/*收货确认*/
+.ic-PartsSaleReturn,
+.ic-PartsSaleReturnWX {
+    background-position: -690px -150px;
+}
+
+/*销售退货*/
+.ic-PartsGetTHFH {
+    background-position: -690px -30px;
+}
+
+/*发货*/
+.ic-WebSiteSaleOrder {
+    background-position: -750px -30px;
+}
+
+/*官网销售单*/
+.ic-OutOfStockRegister {
+    background-position: -750px -210px;
+}
+
+/*缺货登记*/
+.ic-SettlementModesAmend {
+    background-position: -840px -30px;
+}
+
+/*结算方式修改*/
+/*.ic-PartsSaleReturnWX{background-position:-840px -270px;}!*销售退货*!*/
+.ic-paydetaillist{
+    background-position: -990px -120px;  
+}
+.ic-Sale {
+    background-position: -180px -270px;
+}
+
+/*销售*/
+.ic-SelfUse {
+    background-position: -210px 0;
+}
+
+/*内耗*/
+.ic-Accountchecking {
+    background-position: -210px -30px;
+}
+
+/*付款*/
+.ic-PartsReport {
+    background-position: -210px -60px;
+}
+
+/*统计*/
+.ic-Stock {
+    background-position: -300px -180px;
+}
+
+/*库存统计*/
+.ic-Supplier {
+    background-position: -210px -90px;
+}
+
+/*供应商*/
+.ic-PartsClassify {
+    background-position: -210px -120px;
+}
+
+/*分类设置*/
+.ic-PartsSet {
+    background-position: -210px -150px;
+}
+
+/*配件维护*/
+.ic-Purchase {
+    background-position: -120px -180px;
+}
+
+/*采购*/
+
+.ic-Custom {
+    background-position: -30px -90px;
+}
+
+/*客户*/
+.ic-VipSet {
+    background-position: -210px -180px;
+}
+
+/*会员管理*/
+.ic-VipLevel {
+    background-position: -210px -210px;
+}
+
+/*会员等级*/
+.ic-IntegralLevel {
+    background-position: -210px -240px;
+}
+
+/*积分规则*/
+.ic-IntegralAdd {
+    background-position: -210px -270px;
+}
+
+/*积分充值*/
+.ic-IntegralCost {
+    background-position: -240px 0;
+}
+
+/*积分兑换*/
+.ic-AutoRemind {
+    background-position: -240px -30px;
+}
+
+/*自动提醒*/
+.ic-ManulRemind {
+    background-position: -240px -60px;
+}
+
+/*主动提醒*/
+.ic-CustomList,
+.ic-CustomerList,
+.ic-Potential_List,
+.ic-ComList {
+    background-position: -360px -120px;
+}
+
+/*客户列表*/
+.ic-CustomSet {
+    background-position: -360px -150px;
+}
+
+/*客户来源*/
+.ic-CustomEdit,
+.ic-Carinfo {
+    background-position: -360px -180px;
+}
+
+/*车辆信息维护、客户维护*/
+.ic-CustomUpdate {
+    background-position: -360px -210px;
+}
+
+/*客户更新*/
+.ic-Integral {
+    background-position: -360px -240px;
+}
+
+/*积分余额*/
+.ic-Integral_detail {
+    background-position: -360px -270px;
+}
+
+/*积分明细*/
+.ic-Integral_Load {
+    background-position: -330px -270px;
+}
+
+/*明细导入*/
+.ic-DcsList {
+    background-position: -990px -120px;
+}
+
+/*实销信息*/
+
+.ic-Workshop {
+    background-position: -30px -120px;
+}
+
+/*车间*/
+.ic-Tasking {
+    background-position: -240px -90px;
+}
+
+/*车间派工*/
+.ic-ProcessAdjustment {
+    background-position: -240px -120px;
+}
+
+/*工序调整*/
+.ic-ProcessFinish {
+    background-position: -240px -150px;
+}
+
+/*完工处理*/
+.ic-ProcessConfig {
+    background-position: -240px -180px;
+}
+
+/*工序设置*/
+.ic-WorkHourReport {
+    background-position: -240px -210px;
+}
+
+/*工时统计*/
+
+.ic-Financial {
+    background-position: -30px -150px;
+}
+
+/*财务*/
+.ic-Gathering {
+    background-position: -240px -240px;
+}
+
+/*收款*/
+.ic-Payment {
+    background-position: -240px -270px;
+}
+
+/*财务付款*/
+.ic-GatheringReport {
+    background-position: -270px 0;
+}
+
+/*收款统计*/
+.ic-IncomeReport {
+    background-position: -600px -240px;
+}
+
+/*收入统计*/
+.ic-GatheringDetail {
+    background-position: -150px -150px;
+}
+/* 财务收款 */
+.ic-adminPay{
+    background-position: -750px -120px;
+}
+/*收款明细*/
+.ic-PayStyle {
+    background-position: -150px -30px;
+}
+
+/*付款方式*/
+.ic-PaymentReport {
+    background-position: -270px -30px;
+}
+
+/*付款统计*/
+.ic-Jxcdetail {
+    background-position: -630px -150px;
+}
+
+/*进销存明细*/
+.ic-VipcardCount {
+    background-position: -660px 0;
+}
+
+/*会员卡余额*/
+.ic-VipcardDetail {
+    background-position: -660px -30px;
+}
+
+/*会员卡明细*/
+.ic-Moneyreportall {
+    background-position: -660px -90px;
+}
+
+/*提成汇总*/
+.ic-moneyreportall2 {
+    background-position: -750px 0;
+}
+
+/*提成汇总2*/
+.ic-RewardReport {
+    background-position: -870px -210px;
+}
+
+/*提成汇总*/
+.ic-RewardDetail {
+    background-position: -870px -240px;
+}
+
+/*提成明细*/
+.ic-AccountPayment {
+    background-position: -690px -180px;
+}
+
+/*采购付款*/
+.ic-MakeOutInvoice,
+.ic-ApplyInvoice {
+    background-position: -690px -210px;
+}
+
+/*销售发票*/
+.ic-AccountReceivableReport {
+    background-position: -720px -60px;
+}
+.ic-invoiceinfo{
+    background-position: -720px -60px;
+}
+/*挂账统计*/
+.ic-moneyworkers {
+    background-position: -720px -90px;
+}
+
+/*员工收入*/
+.ic-InvoiceAudit {
+    background-position: -750px -120px;
+}
+
+/*采购发票审核*/
+.ic-InvoiceApprove {
+    background-position: -750px -90px;
+}
+
+/*采购发票审批*/
+.ic-EmployeePerformance {
+    background-position: -810px -30px;
+}
+
+/*员工回款绩效*/
+
+
+.ic-Report {
+    background-position: -30px -210px;
+}
+
+/*统计*/
+.ic-SettlementParts {
+    background-position: -150px -210px;
+}
+
+/*结算材料*/
+.ic-UnSettlementReport {
+    background-position: -270px -90px;
+}
+
+/*在修统计（即未结算统计）*/
+.ic-WorkingParts {
+    background-position: -150px -180px;
+}
+
+/*在修材料（即未结算材料）*/
+.ic-SettlementReport {
+    background-position: -270px -60px;
+}
+
+/*结算统计*/
+.ic-SettlementDetailAll {
+    background-position: -120px -210px;
+}
+
+/*结算明细*/
+.ic-InvestigateDetail {
+    background-position: -90px -270px;
+}
+
+/*回访统计*/
+.ic-MessageAmount {
+    background-position: -420px -180px;
+}
+
+/*信息汇总*/
+.ic-RemindRecord {
+    background-position: -420px -210px;
+}
+
+/*提醒记录*/
+.ic-SumAnswer {
+    background-position: -420px -240px;
+}
+
+/*满意度汇总*/
+.ic-MainActionReport {
+    background-position: -420px -270px;
+}
+
+/*主题活动统计*/
+.ic-SignReport {
+    background-position: -450px 0;
+}
+
+/*签到情况*/
+.ic-PayReport {
+    background-position: -450px -30px;
+}
+
+/*微信支付统计*/
+.ic-AppointDrive {
+    background-position: -450px -60px;
+}
+
+/*预约试驾*/
+.ic-Evaluate {
+    background-position: -450px -90px;
+}
+
+/*估价中心*/
+.ic-FloorPrice {
+    background-position: -450px -120px;
+}
+
+/*咨询底价*/
+.ic-GetBackReport {
+    background-position: -450px -150px;
+}
+
+/*撤销统计*/
+.ic-HtmlReport {
+    background-position: -570px -240px;
+}
+
+/*软文统计*/
+.ic-groupmessageread {
+    background-position: -900px -90px;
+}
+
+/*群发效果*/
+.ic-MessageReport {
+    background-position: -570px -270px;
+}
+
+/*信息统计*/
+.ic-MessageAll {
+    background-position: -600px 0;
+}
+
+/*信息汇总*/
+.ic-RemindReport {
+    background-position: -600px -30px;
+}
+
+/*提醒统计*/
+.ic-pageclick {
+    background-position: -600px -60px;
+}
+
+/*模块统计*/
+.ic-groupmessage {
+    background-position: -600px -90px;
+}
+
+/*活动通知*/
+.ic-MessageReport {
+    background-position: -600px -120px;
+}
+
+/*运营报表*/
+.ic-MessageReportAll {
+    background-position: -600px -150px;
+}
+
+/*运营汇总*/
+.ic-MessageDetail {
+    background-position: -600px -180px;
+}
+
+/*信息明细*/
+.ic-MessageReport2 {
+    background-position: -600px -210px;
+}
+
+/*信息报表*/
+.ic-chart,
+.ic-charts_countConnections {
+    background-position: -630px -210px;
+}
+
+/*连接数报表*/
+.ic-PartsMoveReport {
+    background-position: -660px -120px;
+}
+
+/*铺货统计*/
+.ic-PartsMoveDetail {
+    background-position: -660px -150px;
+}
+
+/*铺货明细*/
+.ic-PartsMoveStock {
+    background-position: -660px -180px;
+}
+
+/*铺货库存*/
+.ic-DistributionList {
+    background-position: -840px 0;
+}
+
+/*铺货清单*/
+.ic-AllottedDetail {
+    background-position: -690px -240px;
+}
+
+/*调拨统计*/
+.ic-PartsSaleDetail {
+    background-position: -690px -270px;
+}
+
+/*销售明细*/
+.ic-QueryReport {
+    background-position: -690px -90px;
+}
+
+/*查询统计*/
+.ic-GetGoodsTimes {
+    background-position: -720px -150px;
+}
+
+/*拿货频次*/
+.ic-GetGoodsTimesDetail {
+    background-position: -720px -180px;
+}
+
+/*拿货明细*/
+.ic-WebSiteSaleOrderDetails {
+    background-position: -750px -60px;
+}
+
+/*官网销售明细*/
+.ic-SearchCountAll {
+    background-position: -750px -270px;
+}
+
+/*搜索统计*/
+.ic-client1 {
+    background-position: -780px 0;
+}
+
+/*往来单位*/
+.ic-CusZBContactPlan,
+.ic-CusContactPlan {
+    background-position: -780px -120px;
+}
+
+/*拜访计划*/
+.ic-CusZBContactList,
+.ic-CusContactList {
+    background-position: -780px -90px;
+}
+
+/*拜访查询*/
+.ic-CusZBContactListDetail,
+.ic-CusContactListDetail {
+    background-position: -780px -60px;
+}
+
+/*拜访明细*/
+.ic-WorkHourDetailZB {
+    background-position: -870px 0;
+}
+
+/*工时明细*/
+.ic-OutOrInDetail {
+    background-position: -870px -90px;
+}
+
+/*收发货明细*/
+.ic-orderpay {
+    background-position: -900px 0;
+}
+
+/*订单统计*/
+
+
+
+.ic-PartsInReport {
+    background-position: -270px -120px;
+}
+
+/*入库统计*/
+.ic-PickingReport {
+    background-position: -270px -150px;
+}
+
+/*领料统计*/
+.ic-SaleReport,
+.ic-PartsSaleReport,
+.ic-Report_PSZXSTJ {
+    background-position: -270px -180px;
+}
+
+/*销售统计*/
+.ic-SelfUseReport {
+    background-position: -270px -210px;
+}
+
+/*内耗统计*/
+.ic-PartsInDetails {
+    background-position: -300px -210px;
+}
+
+/*入库明细*/
+.ic-PartsOutReport {
+    background-position: -300px -270px;
+}
+
+/*出库统计*/
+.ic-PartsOutDetails {
+    background-position: -300px -240px;
+}
+
+/*出库明细*/
+.ic-purchase-sale-stock,
+.ic-Jxc {
+    background-position: -270px -240px;
+}
+
+/*进销存*/
+
+.ic-Config {
+    background-position: -30px -180px;
+}
+
+/*设置*/
+.ic-Act {
+    background-position: -270px -270px;
+}
+
+/*岗位设置*/
+.ic-User {
+    background-position: -300px 0;
+}
+
+/*人员管理*/
+.ic-CompInfo {
+    background-position: -300px -30px;
+}
+
+/*公司信息*/
+.ic-Compinfo {
+    background-position: -300px -60px;
+}
+
+/*工时单价*/
+.ic-ItemsClassify {
+    background-position: -300px -90px;
+}
+
+/*项目分类*/
+.ic-ItemsSet {
+    background-position: -300px -120px;
+}
+
+/*项目维护*/
+.ic-SetXlxz {
+    background-position: -120px -90px;
+}
+
+/*修理性质*/
+.ic-Uinfo {
+    background-position: -120px -270px;
+}
+
+/*个人信息*/
+.ic-Userinfo,
+.ic-QuestionList {
+    background-position: -450px -180px;
+}
+
+/*问卷设置*/
+.ic-GetUrl {
+    background-position: -450px -210px;
+}
+
+/*获取链接*/
+.ic-ActionSet {
+    background-position: -450px -240px;
+}
+
+/*活动设置*/
+.ic-ReplySet,
+.ic-MainWord {
+    background-position: -450px -270px;
+}
+
+/*回复设置*/
+.ic-AppointSet {
+    background-position: -480px 0;
+}
+
+/*预约设置*/
+.ic-MessageConfig {
+    background-position: -540px 0;
+}
+
+/*信息设置*/
+.ic-ActSet {
+    background-position: -540px -30px;
+}
+
+/*角色设置*/
+.ic-ShareSet {
+    background-position: -540px -60px;
+}
+
+/*共享设置*/
+.ic-ServiceEvaluationGive {
+    background-position: -690px 0;
+}
+
+/*评价赠送*/
+.ic-moenyreport_set,
+.ic-RewardSet {
+    background-position: -720px -120px;
+}
+
+/*提成设置*/
+.ic-Datadictionary,
+.ic-dictionary {
+    background-position: -810px -240px;
+}
+
+/*数据字典*/
+.ic-BYJPJB {
+    background-position: -810px -270px;
+}
+
+/*保养件匹配*/
+.ic-setstoreLanYan {
+    background-position: -870px -60px;
+}
+
+/*仓库设置*/
+.ic-TrackRoleList {
+    background-position: -930px -180px;
+}
+
+/*回访规则设置*/
+.ic-Configs,
+.ic-ConfigList {
+    background-position: -930px -240px;
+}
+
+/*参数设置*/
+.ic-ActModel {
+    background-position: -990px -150px;
+}
+
+/*经销商权限*/
+.ic-qd_cinfo {
+    background-position: -840px -240px;
+}
+
+/*维修档案上传*/
+
+.ic-Function,
+.ic-Fuction {
+    background-position: -30px -240px;
+}
+
+/*功能*/
+.ic-MessageList {
+    background-position: -330px -30px;
+}
+
+/*信息处理*/
+.ic-MainAction {
+    background-position: -330px -60px;
+}
+
+/*主题活动*/
+.ic-Sale_Report {
+    background-position: -330px -90px;
+}
+
+/*销售报表*/
+.ic-Maintiance_Report {
+    background-position: -330px -120px;
+}
+
+/*维修报表*/
+.ic-MessageSend {
+    background-position: -330px -150px;
+}
+
+/*消息发送*/
+.ic-UnGathering {
+    background-position: -330px -180px;
+}
+
+/*收款撤销*/
+.ic-GetBackCoupons {
+    background-position: -330px -210px;
+}
+
+/*发券撤销*/
+.ic-Undeposit {
+    background-position: -330px -240px;
+}
+
+/*预存撤销*/
+.ic-StoreList {
+    background-position: -120px 0;
+}
+
+/*门店管理*/
+.ic-AdminList {
+    background-position: -120px -30px;
+}
+
+/*账号管理*/
+.ic-Investigate {
+    background-position: -90px -240px;
+}
+
+/*维修回访*/
+.ic-Accountadd {
+    background-position: -510px -180px;
+}
+
+/*添加账号*/
+.ic-Ggsz {
+    background-position: -510px -210px;
+}
+
+/*公告发布*/
+.ic-Videoedit {
+    background-position: -510px -240px;
+}
+
+/*视频浏览*/
+.ic-Password {
+    background-position: -510px -270px;
+}
+
+/*密码修改*/
+.ic-uinfo {
+    background-position: -630px -180px;
+}
+
+/*维修资料*/
+.ic-TboxList {
+    background-position: -630px -240px;
+}
+
+/*设备、设备管理*/
+.ic-Advertising {
+    background-position: -660px -60px;
+}
+
+/*广告发布*/
+.ic-Allotted {
+    background-position: -660px -240px;
+}
+
+/*配件调拨*/
+.ic-OutOfStockCheckAll {
+    background-position: -750px -240px;
+}
+
+/*缺货审核*/
+.ic-OutOfStockCheckTwoAll {
+    background-position: -780px -240px;
+}
+
+/*缺货管理*/
+.ic-ReplaceBrandRegister {
+    background-position: -780px -270px;
+}
+
+/*替换品牌*/
+.ic-SettlementModesCheck {
+    background-position: -780px -30px;
+}
+
+/*结算方式审核*/
+.ic-JYZDBZ {
+    background-position: -840px -180px;
+}
+
+/*经营诊断标准*/
+.ic-PatrolSum {
+    background-position: -840px -150px;
+}
+
+/*巡店统计*/
+.ic-PatrolPlan {
+    background-position: -840px -120px;
+}
+
+/*巡店计划*/
+.ic-AcountListJMD {
+    background-position: -840px -210px;
+}
+
+/*加盟店会员店管理*/
+.ic-Knowladge {
+    background-position: -900px -30px;
+}
+
+/*知识库*/
+.ic-groupmenupost {
+    background-position: -900px -60px;
+}
+
+/*微信菜单*/
+.ic-WeiXin {
+    background-position: -900px -60px;
+}
+
+/*微信菜单*/
+.ic-roadhelp {
+    background-position: -930px -90px;
+}
+
+/*救援查询*/
+.ic-complain {
+    background-position: -930px -120px;
+}
+
+/*投诉查询*/
+.ic-chartsgroup {
+    background-position: -930px -150px;
+}
+
+/*服务器监控*/
+.ic-serveralert {
+    background-position: -990px -60px;
+}
+
+/*服务器报警*/
+
+.ic-Model {
+    background-position: -30px -270px;
+}
+
+/*模板*/
+
+.ic-Publish {
+    background-position: -60px 0;
+}
+
+/*发布*/
+.ic-Price {
+    background-position: -360px 0;
+}
+
+/*价格发布*/
+.ic-Html {
+    background-position: -360px -30px;
+}
+
+/*软文发布*/
+.ic-Comment {
+    background-position: -360px -60px;
+}
+
+/*评论管理*/
+.ic-Recruit {
+    background-position: -360px -90px;
+}
+
+/*岗位招聘*/
+
+.ic-Goods {
+    background-position: -60px -30px;
+}
+
+/*商品管理*/
+.ic-GoodsClassify {
+    background-position: -390px 0;
+}
+
+/*商品分类*/
+.ic-Saling_Goods {
+    background-position: -390px -30px;
+}
+
+/*在售商品*/
+.ic-MyGoods {
+    background-position: -390px -60px;
+}
+
+/*我的商品*/
+.ic-PublicGoods {
+    background-position: -390px -90px;
+}
+
+/*公共商品*/
+.ic-GoodsAdd {
+    background-position: -390px -120px;
+}
+
+/*商品添加*/
+.ic-GoodsComment {
+    background-position: -390px -150px;
+}
+
+/*商品评价*/
+.ic-GoodsOrder {
+    background-position: -390px -180px;
+}
+
+/*商品订单*/
+.ic-GetRule {
+    background-position: -390px -210px;
+}
+
+/*兑换规则*/
+.ic-CarSet,
+.ic-CarType {
+    background-position: -390px -240px;
+}
+
+/*车型设置*/
+.ic-GoodSort {
+    background-position: -390px -270px;
+}
+
+/*商品排序*/
+
+.ic-UsedCar {
+    background-position: -60px -90px;
+}
+
+/*二手车*/
+.ic-CarClassify {
+    background-position: -420px -30px;
+}
+
+/*车辆分类*/
+.ic-CarSearch {
+    background-position: -420px -60px;
+}
+
+/*车辆查询*/
+.ic-CarAdd {
+    background-position: -420px -90px;
+}
+
+/*车辆添加*/
+.ic-CarDetail {
+    background-position: -420px -120px;
+}
+
+/*参数设置*/
+.ic-CarOrder {
+    background-position: -420px -150px;
+}
+
+/*车辆订单*/
+
+.ic-Vip,
+.ic-Client {
+    background-position: -60px -60px;
+}
+
+/*微信营销*/
+.ic-Coupons {
+    background-position: -480px -30px;
+}
+
+/*营销工具*/
+.ic-VipAction {
+    background-position: -480px -60px;
+}
+
+/*营销活动*/
+.ic-SendCoupons {
+    background-position: -480px -90px;
+}
+
+/*发送券*/
+.ic-SaveMoney {
+    background-position: -480px -120px;
+}
+
+/*预存充值*/
+.ic-CouponsChecked {
+    background-position: -480px -150px;
+}
+
+/*核销营销*/
+.ic-SavedTotal {
+    background-position: -480px -180px;
+}
+
+/*预存统计*/
+.ic-SavedDetail {
+    background-position: -480px -210px;
+}
+
+/*预存明细*/
+.ic-SavedUse {
+    background-position: -480px -240px;
+}
+
+/*预存消费*/
+.ic-CheckedTotal {
+    background-position: -480px -270px;
+}
+
+/*核销统计*/
+.ic-CheckedDetail {
+    background-position: -510px 0;
+}
+
+/*核销明细*/
+.ic-SendCouponsTotal {
+    background-position: -510px -30px;
+}
+
+/*发券统计*/
+.ic-SendCouponsDetail {
+    background-position: -510px -60px;
+}
+
+/*发券明细*/
+.ic-StockDetail,
+.ic-stock2All {
+    background-position: -510px -90px;
+}
+
+/*库存明细*/
+.ic-ActionCheck {
+    background-position: -510px -120px;
+}
+
+/*活动审核*/
+
+
+.ic-CxConfig {
+    background-position: -60px -120px;
+}
+
+/*车型设置*/
+.ic-BrandSet {
+    background-position: -540px -90px;
+}
+
+/*品牌设置*/
+.ic-CarGroup {
+    background-position: -540px -120px;
+}
+
+/*车系设置*/
+.ic-CarPic {
+    background-position: -540px -150px;
+}
+
+/*车系图片*/
+
+.ic-CarLen {
+    background-position: -90px -30px;
+}
+
+/*车联网*/
+.ic-Electricfence {
+    background-position: -870px -120px;
+}
+
+/*电子围栏*/
+.ic-WarnInfo,
+.ic-Warninfo {
+    background-position: -870px -150px;
+}
+
+/*报警信息*/
+.ic-Appfeedback {
+    background-position: -990px -90px;
+}
+
+/*APP用户反馈*/
+
+.ic-CxSet {
+    background-position: -60px -150px;
+}
+
+/*车型参数*/
+.ic-CarBody {
+    background-position: -540px -180px;
+}
+
+/*车体*/
+.ic-Enigie {
+    background-position: -540px -210px;
+}
+
+/*发动机*/
+.ic-Brake {
+    background-position: -540px -240px;
+}
+
+/*底盘制动*/
+.ic-Safety {
+    background-position: -540px -270px;
+}
+
+/*安全配置*/
+.ic-Wheel {
+    background-position: -570px 0;
+}
+
+/*车轮*/
+.ic-Driving {
+    background-position: -570px -30px;
+}
+
+/*行车辅助*/
+.ic-Door {
+    background-position: -570px -60px;
+}
+
+/*门窗、后视镜*/
+.ic-Light {
+    background-position: -570px -90px;
+}
+
+/*灯光*/
+.ic-Internal {
+    background-position: -570px -120px;
+}
+
+/*内部配置*/
+.ic-Seat {
+    background-position: -570px -150px;
+}
+
+/*座椅*/
+.ic-Entertainment {
+    background-position: -570px -180px;
+}
+
+/*娱乐通讯*/
+.ic-Refrigerator {
+    background-position: -570px -210px;
+}
+
+/*冰箱、空调*/
+
+.ic-CallCenter {
+    background-position: -90px -60px;
+}
+
+/*呼叫中心*/
+.ic-InvClient {
+    background-position: -870px -180px;
+}
+
+/*客户导入*/
+.ic-CallList {
+    background-position: -930px -60px;
+}
+
+/*来电记录*/
+
+.ic-ChartReport {
+    background-position: -90px -90px;
+}
+
+/*BI报表*/
+
+.ic-Charts {
+    background-position: -60px -180px;
+}
+
+/*报表*/
+.ic-Charts_businesanalysis,
+.ic-charts_business {
+    background-position: -600px -270px;
+}
+
+/*业务分析*/
+.ic-Charts_incomesanalysis {
+    background-position: -630px 0;
+}
+
+/*收益分析*/
+.ic-Charts_paytypes {
+    background-position: -630px -30px;
+}
+
+/*支付分析*/
+.ic-Charts_staffsadmin {
+    background-position: -630px -60px;
+}
+
+/*人均产值*/
+.ic-Charts_usermanage,
+.ic-Report_PSZKHFX {
+    background-position: -630px -90px;
+}
+
+/*客户分析*/
+.ic-Charts_satisfaction {
+    background-position: -630px -120px;
+}
+
+/*满意度调查*/
+.ic-Charts_businesscontrast,
+.ic-charts_comparison {
+    background-position: -630px -270px;
+}
+
+/*营业对比*/
+.ic-Charts_usersContrast {
+    background-position: -660px -270px;
+}
+
+/*客户对比*/
+.ic-BusinessReport {
+    background-position: -690px -120px;
+}
+
+/*经营月报*/
+.ic-DirectSaleReportOfDay {
+    background-position: -690px -60px;
+}
+
+/*销售日报*/
+.ic-ClientAll {
+    background-position: -720px -210px;
+}
+
+/*直营店报表*/
+.ic-SaleStoreManageWeekly {
+    background-position: -720px -270px;
+}
+
+/*直营店经营周表*/
+.ic-Report_WXZYDJYHZ {
+    background-position: -750px -180px;
+}
+
+/*维修直营店经营汇总*/
+.ic-Report_WXZYDJYXMFX {
+    background-position: -750px -150px;
+}
+
+/*维修直营店项目经营分析*/
+.ic-EmployeePerformanceReport,
+.ic-EmployeePerformanceReport1 {
+    background-position: -810px 0;
+}
+
+/*员工回款绩效统计*/
+.ic-charts_investigate,
+.ic-charts_satisfaction {
+    background-position: -810px -180px;
+}
+
+/*回访分析*/
+.ic-Report_JMDGDFX {
+    background-position: -810px -210px;
+}
+
+/*加盟店工单分析*/
+.ic-Report_ZYDJYSJFX {
+    background-position: -840px -60px;
+}
+
+/*直营店运营数据分析*/
+.ic-CustomerStatistics,
+.ic-Report_CLIENT {
+    background-position: -840px -90px;
+}
+
+/*客户统计*/
+
+.ic-PSZ {
+    background-position: -90px 0;
+}
+
+/*配送站经营报表*/
+.ic-Report_PSZJYGK {
+    background-position: -870px -30px;
+}
+
+/*配送站经营概况*/
+.ic-Report_PSZPLXS {
+    background-position: -870px -270px;
+}
+
+/*品类销售明细*/
+
+/* dcs备件 */
+.ic-DCSBJManagement {
+    background-position: -1080px -240px;
+}
+
+.ic-dcsbj1 {
+    background-position: -1080px -270px;
+}
+
+.ic-dcsbj2 {
+    background-position: -1080px 0px;
+}
+
+.ic-dcsbj3 {
+    background-position: -1080px -30px;
+}
+
+.ic-dcsbj4 {
+    background-position: -1080px -60px;
+}
+
+.ic-dcsbj5 {
+    background-position: -1080px -90px;
+}
+
+.ic-dcsbj6 {
+    background-position: -1080px -120px;
+}
+
+.ic-dcsbj7 {
+    background-position: -1080px -150px;
+}
+
+.ic-dcsbj8 {
+    background-position: -1080px -180px;
+}
+
+.ic-dcsbj9 {
+    background-position: -1080px -210px;
+}
+
+.ic-dcsbj10 {
+    background-position: -1080px -240px;
+}
+
+.ic-dcsbj11 {
+    background-position: -1080px -270px;
+}
+
+.ic-dcsbj12 {
+    background-position: -1110px 0px;
+}
+
+.ic-dcsbj13 {
+    background-position: -1110px -30px;
+}
+
+.ic-dcsbj14 {
+    background-position: -1110px -60px;
+}
+
+.ic-dcsbj15 {
+    background-position: -1110px -90px;
+}
+.ic-dcsbj16 {
+    background-position: -1110px -120px;
+}
+
+.ic-dcsbj17 {
+    background-position: -1110px -150px;
+}
+
+
+.ic-Insurance {
+    background-position: -60px -270px;
+}
+
+/*保险*/
+.ic-InsEntrySC {
+    background-position: -810px -60px;
+}
+
+/*车辆保险*/
+.ic-extendRate {
+    background-position: -810px -90px;
+}
+
+/*保险费率*/
+.ic-bx-operateGuide {
+    background-position: -810px -120px;
+}
+
+/*操作指南*/
+.ic-bx-normalQues {
+    background-position: -810px -150px;
+}
+
+/*常见问题*/
+
+.ic-OtherUser {
+    background-position: -90px -120px;
+}
+
+/*线索管理*/
+.ic-Import {
+    background-position: -930px 0;
+}
+
+/*线索批量上传*/
+.ic-OtherUserList {
+    background-position: -930px -30px;
+}
+
+/*线索查询*/
+.ic-OtherLineList {
+    background-position: -900px -210px;
+}
+
+/*线索列表*/
+.ic-Clue {
+    background-position: -960px 0;
+}
+
+/*线索表现分析*/
+.ic-ClueFunnel {
+    background-position: -960px -30px;
+}
+
+/*线索漏斗表现*/
+.ic-ClueData {
+    background-position: -960px -60px;
+}
+
+/*线索数据报表*/
+.ic-ClueDay {
+    background-position: -930px -30px;
+}
+
+/*线索漏斗表现*/
+
+.ic-Online {
+    background-position: -90px -150px;
+}
+
+/*在线客服*/
+.ic-OnlineServer {
+    background-position: -990px -150px;
+}
+
+/*客服服务*/
+.ic-OnlineDic {
+    background-position: -990px -180px;
+}
+
+/*自动问答分类*/
+.ic-OnlineQue {
+    background-position: -990px -210px;
+}
+
+/*自动问答设置*/
+.ic-HotList {
+    background-position: -990px -240px;
+}
+
+/*热门问题*/
+.ic-OnlineMsg {
+    background-position: -990px -270px;
+}
+
+/*在线留言*/
+.ic-Service {
+    background-position: -120px -270px;
+}
+
+/*服务管理*/
+.ic-Try {
+    background-position: -810px -180px;
+}
+
+/*预约试驾*/
+.ic-Repair {
+    background-position: -60px -120px;
+}
+
+/*维保预约*/
+.ic-ComplainList {
+    background-position: -510px 0px;
+}
+
+/*投诉建议*/
+
+/* dcs部分 */
+.ic-DcsProgramManagement {
+    background-position: -510px -150px;
+}
+
+/*DCS计划管理*/
+.ic-AnnualTaskInquiry {
+    background-position: -690px -90px;
+}
+
+/*年度任务查询*/
+.ic-MonthlyTaskQuery {
+    background-position: -690px -90px;
+}
+
+/*月度任务查询*/
+.ic-DemandForecastReport {
+    background-position: -300px -240px;
+}
+
+/*需求预测上报*/
+.ic-DemandForecastingQuery {
+    background-position: -180px -150px;
+}
+
+/*需求预测查询*/
+.ic-DemandForecastReportDLR {
+    background-position: -300px -240px;
+}
+
+/*需求预测上报(DLR)*/
+
+.ic-DCSOrderManagement {
+    background-position: -1020px 0;
+}
+
+/*订单报告*/
+.ic-MarketReport {
+    background-position: -900px 0;
+}
+
+/*理赔报告*/
+.ic-CliamReport {
+    background-position: -390px -180px;
+}
+
+/*合同报告*/
+.ic-MarketListReport {
+    background-position: -420px -150px;
+}
+
+/*账单报告*/
+
+.ic-CheckReport {
+    background-position: -30px -150px;
+}
+
+/*DCS财务管理*/
+.ic-DealerPaymentInQuiryDLR {
+    background-position: -240px -270px;
+}
+
+/*经销商付款查询(DLR)*/
+.ic-DealerAccountBalanceInquiry {
+    background-position: -660px 0
+}
+
+/*经销商账户余额查询*/
+
+.ic-DCSDealerSalesManagement {
+    background-position: -990px -120px;
+}
+
+/*DCS经销商实销管理*/
+.ic-VehicleAcceptanceDLR {
+    background-position: -390px -240px;
+}
+
+/*车辆验收(DLR)*/
+.ic-VehicleAcceptanceInquiryDLR {
+    background-position: -420px -60px;
+}
+
+/*车辆验收查询(DLR)*/
+.ic-InventoryInquiryDLR {
+    background-position: -510px -90px;
+}
+
+/*库存查询(DLR)*/
+.ic-VehicleReturnedToTheDepotApplication {
+    background-position: -930px -210px;
+}
+
+/*车辆退回车厂申请*/
+.ic-VehicleReturnedToTheCarFactory {
+    background-position: -420px -60px;
+}
+
+/*车辆退回车厂查询*/
+.ic-DealerWarehouseManagement {
+    background-position: -30px -150px;
+}
+
+/*经销商仓库管理*/
+.ic-VehicleTransferApplicationDLR {
+    background-position: -660px -240px;
+}
+
+/*车辆调拨申请(DLR)*/
+.ic-VehicleTransferInquiryDLR {
+    background-position: -420px -60px;
+}
+
+/*车辆调拨查询(DLR)*/
+.ic-VehicleTransferAndStorageDLR {
+    background-position: -270px -120px;
+}
+
+/*车辆调拨入库(DLR)*/
+.ic-CustomerSalesInformationReport {
+    background-position: -990px -120px;
+}
+
+/*客户实销信息上报*/
+.ic-CustomerSalesInformationInquiryDLR {
+    background-position: -930px -120px;
+}
+
+/*客户实销信息查询(DLR)*/
+.ic-CustomerSalesInformationChangeRequestDLR {
+    background-position: -330px -210px;
+}
+
+/*客户实销信息更改申请(DLR)*/
+.ic-CustomerSalesInformationChangeQuerytDLR {
+    background-position: -780px -90px;
+}
+
+/*客户实销信息更改查询(DLR)*/
+.ic-CustomerSalesReturnApplication {
+    background-position: -840px -270px;
+}
+
+/*客户实销退车申请*/
+.ic-CustomerSalesReturnInquiry {
+    background-position: -690px -150px;
+}
+
+/*客户实销退车查询*/
+.ic-DealerInformation {
+    background-position: -300px 0;
+}
+
+/*经销商人员信息*/
+
+.ic-DCSStorageAndTransportationManagement {
+    background-position: -510px -90px;
+}
+
+/*DCS储运管理*/
+.ic-InTransitLocationQuery {
+    background-position: -810px -270px;
+}
+
+/*在途位置查询*/
+
+
+.ic-DCSServiceManagement {
+    background-position: -90px -180px;
+}
+
+/*DCS售后服务管理*/
+.ic-MaintenanceWorkOrderRegistration {
+    background-position: -1020px -30px;
+}
+
+/*维修工单登记(new)*/
+.ic-NewClaimForm {
+    background-position: -1020px -60px;
+}
+
+/*索赔单新增*/
+.ic-ClaimFormInquiryNEW {
+    background-position: -1020px -90px;
+}
+
+/*索赔单查询(NEW)*/
+.ic-ClaimFormDiscardQueryNEW {
+    background-position: -1020px -120px;
+}
+
+/*索赔单废弃查询(NEW)*/
+.ic-OldLabelPrinting {
+    background-position: -1020px -150px;
+}
+
+/*旧件标签批量打印)*/
+.ic-OldPartsTransportationProcessing {
+    background-position: -1020px -180px;
+}
+
+/*旧件运输处理*/
+.ic-DeductionNotenew {
+    background-position: -1020px -210px;
+}
+
+/*抵扣通知单(新)*/
+.ic-AdministrativeDeductionInquiry {
+    background-position: -1020px -240px;
+}
+
+/*行政扣款查询*/
+.ic-BillingNoticeInquiry {
+    background-position: -1020px -270px;
+}
+
+/*开票通知单查询*/
+.ic-TaxableLaborList {
+    background-position: -1050px -0px;
+}
+
+/*应税劳务清单*/
+.ic-GoodFaithClaim {
+    background-position: -1050px -30px;
+}
+
+/*善意索赔申请*/
+.ic-PositiveAndNegativeIncentiveQuery {
+    background-position: -1050px -60px;
+}
+
+/*正负激励查询*/
+.ic-ServiceActivityApplication {
+    background-position: -1050px -90px;
+}
+
+/*服务活动申请*/
+.ic-QualityInformationFeedbackApplication {
+    background-position: -1050px -120px;
+}
+
+/*质量信息反馈申请(新)*/
+.ic-PINCodeApplication {
+    background-position: -1050px -150px;
+}
+
+/*PIN码查看申请*/
+.ic-OutingRescueApplication {
+    background-position: -1050px -180px;
+}
+
+/*外出救援申请*/
+.ic-VehicleInformationChangeRequestNEW {
+    background-position: -1050px -210px;
+}
+
+/*车辆信息变更申请(NEW)*/
+
+/*================滚动条插件================*/
+.mCustomScrollbar {
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
+.mCustomScrollbar.mCS_no_scrollbar,
+.mCustomScrollbar.mCS_touch_action {
+    -ms-touch-action: auto;
+    touch-action: auto;
+}
+
+.mCustomScrollBox {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    max-width: 100%;
+    outline: none;
+    direction: ltr;
+}
+
+.mCSB_container {
+    overflow: hidden;
+    width: auto;
+    height: auto;
+}
+
+/*.mCSB_inside > .mCSB_container{ margin-right: 30px; }*/
+.mCSB_container.mCS_no_scrollbar_y.mCS_y_hidden {
+    margin-right: 0;
+}
+
+.mCS-dir-rtl>.mCSB_inside>.mCSB_container {
+    margin-right: 0;
+    margin-left: 30px;
+}
+
+.mCS-dir-rtl>.mCSB_inside>.mCSB_container.mCS_no_scrollbar_y.mCS_y_hidden {
+    margin-left: 0;
+}
+
+.mCSB_scrollTools {
+    position: absolute;
+    width: 16px;
+    height: auto;
+    left: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.mCSB_outside+.mCSB_scrollTools {
+    right: -26px;
+}
+
+.mCS-dir-rtl>.mCSB_inside>.mCSB_scrollTools,
+.mCS-dir-rtl>.mCSB_outside+.mCSB_scrollTools {
+    right: auto;
+    left: 0;
+}
+
+.mCS-dir-rtl>.mCSB_outside+.mCSB_scrollTools {
+    left: -26px;
+}
+
+.mCSB_scrollTools .mCSB_draggerContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: auto;
+}
+
+.mCSB_scrollTools a+.mCSB_draggerContainer {
+    margin: 20px 0;
+}
+
+.mCSB_scrollTools .mCSB_draggerRail {
+    width: 2px;
+    height: 100%;
+    margin: 0 auto;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
+}
+
+.mCSB_scrollTools .mCSB_dragger {
+    cursor: pointer;
+    width: 100%;
+    height: 30px;
+    z-index: 1;
+    right: 0;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    position: relative;
+    width: 4px;
+    height: 100%;
+    margin: 0 auto;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar,
+.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar {
+    width: 12px;
+}
+
+.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded+.mCSB_draggerRail,
+.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_draggerRail {
+    width: 8px;
+}
+
+.mCSB_scrollTools .mCSB_buttonUp,
+.mCSB_scrollTools .mCSB_buttonDown {
+    display: block;
+    position: absolute;
+    height: 20px;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.mCSB_scrollTools .mCSB_buttonDown {
+    bottom: 0;
+}
+
+.mCSB_container_wrapper {
+    position: absolute;
+    height: auto;
+    width: auto;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.mCSB_container_wrapper>.mCSB_container {
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
+
+.mCSB_vertical_horizontal>.mCSB_scrollTools.mCSB_scrollTools_vertical {
+    bottom: 20px;
+}
+
+.mCSB_vertical_horizontal>.mCSB_scrollTools.mCSB_scrollTools_horizontal {
+    right: 20px;
+}
+
+.mCSB_container_wrapper.mCS_no_scrollbar_x.mCS_x_hidden+.mCSB_scrollTools.mCSB_scrollTools_vertical {
+    bottom: 0;
+}
+
+.mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden+.mCSB_scrollTools~.mCSB_scrollTools.mCSB_scrollTools_horizontal,
+.mCS-dir-rtl>.mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside>.mCSB_scrollTools.mCSB_scrollTools_horizontal {
+    right: 0;
+}
+
+.mCS-dir-rtl>.mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside>.mCSB_scrollTools.mCSB_scrollTools_horizontal {
+    left: 20px;
+}
+
+.mCS-dir-rtl>.mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside>.mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden+.mCSB_scrollTools~.mCSB_scrollTools.mCSB_scrollTools_horizontal {
+    left: 0;
+}
+
+.mCS-dir-rtl>.mCSB_inside>.mCSB_container_wrapper {
+    margin-right: 0;
+    margin-left: 30px;
+}
+
+.mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden>.mCSB_container {
+    padding-right: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.mCSB_container_wrapper.mCS_no_scrollbar_x.mCS_x_hidden>.mCSB_container {
+    padding-bottom: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside>.mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside>.mCSB_container_wrapper.mCS_no_scrollbar_x.mCS_x_hidden {
+    margin-bottom: 0;
+}
+
+.mCSB_scrollTools,
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_buttonUp,
+.mCSB_scrollTools .mCSB_buttonDown,
+.mCSB_scrollTools .mCSB_buttonLeft,
+.mCSB_scrollTools .mCSB_buttonRight {
+    -webkit-transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
+    -moz-transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
+    -o-transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
+    transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
+}
+
+.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger_bar,
+.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail,
+.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger_bar,
+.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail {
+    -webkit-transition: width .2s ease-out .2s, height .2s ease-out .2s,
+        margin-left .2s ease-out .2s, margin-right .2s ease-out .2s,
+        margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
+        opacity .2s ease-in-out, background-color .2s ease-in-out;
+    -moz-transition: width .2s ease-out .2s, height .2s ease-out .2s,
+        margin-left .2s ease-out .2s, margin-right .2s ease-out .2s,
+        margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
+        opacity .2s ease-in-out, background-color .2s ease-in-out;
+    -o-transition: width .2s ease-out .2s, height .2s ease-out .2s,
+        margin-left .2s ease-out .2s, margin-right .2s ease-out .2s,
+        margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
+        opacity .2s ease-in-out, background-color .2s ease-in-out;
+    transition: width .2s ease-out .2s, height .2s ease-out .2s,
+        margin-left .2s ease-out .2s, margin-right .2s ease-out .2s,
+        margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
+        opacity .2s ease-in-out, background-color .2s ease-in-out;
+}
+
+.mCSB_scrollTools {
+    opacity: 0.75;
+    filter: "alpha(opacity=75)";
+    -ms-filter: "alpha(opacity=75)";
+}
+
+.mCS-autoHide>.mCustomScrollBox>.mCSB_scrollTools,
+.mCS-autoHide>.mCustomScrollBox~.mCSB_scrollTools {
+    opacity: 0;
+    filter: "alpha(opacity=0)";
+    -ms-filter: "alpha(opacity=0)";
+}
+
+.mCustomScrollbar>.mCustomScrollBox>.mCSB_scrollTools.mCSB_scrollTools_onDrag,
+.mCustomScrollbar>.mCustomScrollBox~.mCSB_scrollTools.mCSB_scrollTools_onDrag,
+.mCustomScrollBox:hover>.mCSB_scrollTools,
+.mCustomScrollBox:hover~.mCSB_scrollTools,
+.mCS-autoHide:hover>.mCustomScrollBox>.mCSB_scrollTools,
+.mCS-autoHide:hover>.mCustomScrollBox~.mCSB_scrollTools {
+    opacity: 1;
+    filter: "alpha(opacity=100)";
+    -ms-filter: "alpha(opacity=100)";
+}
+
+.mCSB_scrollTools .mCSB_draggerRail {}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.75);
+    filter: "alpha(opacity=75)";
+    -ms-filter: "alpha(opacity=75)";
+}
+
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.85);
+    filter: "alpha(opacity=85)";
+    -ms-filter: "alpha(opacity=85)";
+}
+
+/*滚动条滑块颜色控制*/
+.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
+    filter: "alpha(opacity=90)";
+    -ms-filter: "alpha(opacity=90)";
+}
+
+/* 遮罩层 */
+.popup {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.popup-mask,
+.loading-maskbg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5) !important;
+    background: #000;
+    filter: alpha(opacity=50);
+}
+
+.loading-maskbg {
+    z-index: 99999;
+}
+
+.popup-box {
+    position: relative;
+    background: #fff;
+    margin: 0 auto;
+}
+
+.popup-title {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    font-weight: normal;
+    background: #28303b;
+    font-size: 13px;
+    color: #fff;
+}
+
+.popup-title-con {
+    color: #fff;
+}
+
+.popup-close {
+    float: right;
+    cursor: pointer;
+    color: #fff;
+    background: url(../images/icon2.png) 0 -50px no-repeat;
+    text-indent: -9999px;
+    width: 30px;
+    height: 30px;
+}
+
+.popup-con {
+    padding: 10px 20px;
+}
+
+.form-item {
+    margin-top: 10px;
+}
+
+.txt-c {
+    text-align: center;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: #1caf9a;
+    height: 24px;
+    line-height: 22px;
+    color: #fff;
+    text-align: center;
+    border: 0 none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 20px;
+    min-width: 60px;
+}
+
+/*基本按钮：绿底白字居中*/
+.btn-ok {
+    width: 120px;
+    margin-top: 20px;
+}
+
+.txt {
+    border: 1px solid #c1c3c8;
+    height: 21px;
+    line-height: 21px;
+    padding: 0 2px;
+    margin-right: 0;
+}
+
+.error-txt {
+    font-size: 12px;
+    color: #f00;
+}
+
+em.ic-error {
+    float: left;
+    width: 12px;
+    height: 12px;
+    background: url(../images/icon2.png) 0 -150px no-repeat;
+    margin: 3px 5px 0 0;
+}
+
+
+
+
+
+/*main*/
+.main {
+    margin-left: 235px;
+    zoom: 1;
+}
+
+.full-main {
+    margin-left: 0;
+}
+
+.guide {
+    padding: 12px 2%;
+    background: #fff;
+    float: left;
+    width: 96%;
+    position: relative;
+}
+
+.guide li {
+    float: left;
+}
+
+.guide a {
+    display: block;
+    color: #999;
+    font-size: 13px;
+}
+
+li.guide-arrow {
+    padding: 0 10px;
+}
+
+.ic-home {
+    float: left;
+    width: 14px;
+    height: 14px;
+    background: url(../images/icon.png) 0 -89px;
+    margin-right: 7px;
+}
+
+.ic-guide-arrow {
+    float: left;
+    width: 10px;
+    height: 14px;
+    background: url(../images/icon.png) 0 -117px;
+    margin: 0 10px;
+}
+
+.log_username {
+    position: absolute;
+    right: 15px;
+    top: 13px;
+    color: #999;
+    font-size: 13px;
+}
+
+.log_username::before {
+    content: "";
+    float: left;
+    margin-right: 5px;
+    height: 18px;
+    width: 18px;
+    background: url(../images/icon2.png) no-repeat -250px 0;
+}
+
+.log_username b {
+    font-weight: normal;
+}
+
+.mainFrame {
+    width: 100%;
+    overflow-y: auto;
+}
+
+
+/*侧边主菜单折叠情况下*/
+.fold .sidebar {
+    width: 45px;
+}
+
+.fold .ic-down,
+.fold .ic-left,
+.fold .first-menu-name,
+.fold .sub-menu {
+    display: none;
+}
+
+.fold a.first-menu {
+    padding-left: 13px;
+}
+
+.fold .btn-menu-toggle {
+    margin: 15px 8px 10px 0;
+    background-position: 0 -240px;
+}
+
+.fold .btn-menu-toggle:hover {
+    background-position: 0 -270px;
+}
+
+.fold .sub-menu {
+    position: absolute;
+    width: 210px;
+    left: 13px;
+    top: 0px;
+    padding: 0;
+    z-index: 0;
+}
+
+.fold .sub-menu .second-menu.first {
+    height: 40px;
+    line-height: 40px;
+}
+
+.fold .main {
+    margin-left: 45px;
+}
+
+
+
+
+/*====================footer===================*/
+#footer {
+    clear: both;
+    width: 100%;
+    height: 33px;
+    background: #364150;
+    position: absolute;
+    bottom: 0;
+    color: #98a6ba;
+}
+
+#footer span,
+#footer p {
+    display: inline-block;
+    padding: 0 5px 0 10px;
+    line-height: 33px;
+    font-size: .9em;
+}
+
+#footer .footer-copy {
+    float: right;
+}
+
+
+/* 文档 */
+.ic-document{
+    background-position: -1020px 0;
+}
+
+/*系统资料*/
+.ic-train{
+    background-position: -930px -181px;
+}

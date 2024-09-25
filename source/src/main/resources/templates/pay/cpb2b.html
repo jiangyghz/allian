@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>订单</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap-validation/bootstrap3-validation.min.js"></script>
+    <script src="../js/jquery.pwdstrategy.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/pingpp.js"></script>
+</head>
+
+<body>
+<div class="modal-header" >
+    <h4 class="modal-title" id="exampleModalLabel">银联企业支付</h4>
+</div>
+
+<div class="modal-body" style=" overflow:auto;">
+    <form id="form1" role="form"  class="form-horizontal" action="order" method="post" >
+        <div class="form-group">
+            <label class="col-sm-3 control-label">订单号：</label>
+            <div class="col-xs-8">
+                <input type="hidden"  name="action"   value="save"  />
+                <input type="text" class="form-control " check-type="required" id="billno"  name="billno"  value="12345"   />
+            </div>
+        </div>
+
+    </form>
+</div>
+<div class="modal-footer " style="text-align: center;">
+    <button type="button" class="btn btn-primary" id="btnSubmit">保存</button>
+<!--    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>-->
+</div>
+<script th:inline="javascript">
+    $(function(){
+        $('#form1').validation({reqmark:false});
+        $("#btnSubmit").click(function(){
+            if($("#form1").valid()==false){
+                $(".form-group.has-error").eq(0).find("input,select,textarea").focus();
+                return false;
+            }
+            $.post("recharge",{"channel":3,"payrequestid":$("#billno").val()},function(data){
+                console.info(data);
+                console.info(data.data.transfer);
+                console.info(data.data.charge);
+                var s="";
+                if(data.data.charge){
+                    s=data.data.charge;
+                }
+                if(data.data.transfer){
+                    s=data.data.transfer;
+                }
+                pingpp.createPayment(s, function(result, err){
+                    // object 需是 Charge/Order/Recharge 的 JSON 字符串
+                    // 可按需使用 alert 方法弹出 log
+                    //console.log(JSON.stringify(object));
+                    console.log("result:" + result);
+                    console.log("err.msg:" + err.msg);
+                    console.log("err.extra:" + err.extra);
+                    if (result == "success") {
+                        // 只有微信JSAPI (wx_pub)、微信小程序（wx_lite）、QQ 公众号 (qpay_pub)、支付宝小程序（alipay_lite）支付成功的结果会在这里返回，其他的支付结果都会跳转到 extra 中对应的 URL
+                    } else if (result == "fail") {
+                        // Ping++ 对象 object 不正确或者微信JSAPI/微信小程序/QQ公众号支付失败时会在此处返回
+                    } else if (result == "cancel") {
+                        // 微信JSAPI、微信小程序、QQ 公众号、支付宝小程序支付取消支付
+                    }
+                });
+            },"json");
+        });
+    });
+
+</script>
+</body>
+
+</html>

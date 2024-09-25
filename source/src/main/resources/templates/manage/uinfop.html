@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>用户修改</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap-validation/bootstrap3-validation.min.js"></script>
+    <script src="../js/jquery.pwdstrategy.js"></script>
+    <script src="../js/base64.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+    <style>
+        .p-form__title{
+            padding: 28px 32px;
+            font-size: 28px;
+            line-height: 28px;
+            font-weight: bold;
+        }
+        .p-form__main{
+            padding: 12px 68px 0 32px;
+        }
+        .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control{
+            border-color: #F2F2F2 !important;
+            box-shadow: none !important;
+            color: #96989A;
+        }
+        .p-form__main input{
+            height: 40px;
+            border-color: #B0B1B2;
+            border-radius: 0;
+        }
+        .p-form__main input:hover{
+            border-color: #000;
+        }
+        .p-form__main input:focus{
+            border-color: #00d5b9 !important;
+            box-shadow: 0 0 0 2px rgba(0, 213, 185, 0.2) !important;
+        }
+        .p-form__main .form-group{
+            margin-bottom: 28px;
+        }
+        .p-form__main .col-xs-4 .form-control{
+            /* max-width: 300px; */
+        }
+        .p-form__main .col-xs-4{
+            padding-left: 0;
+            padding-right: 60px;
+        }
+        .p-form__main .col-xs-4:last-child{
+            padding-right: 0;
+        }
+        .p-form__tips{
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+            line-height: 16px;
+        }
+        .p-form__footer{
+            margin-top: 40px;
+            padding: 40px 0;
+            border-top: 1px solid #C9CACB;
+            text-align: right;
+        }
+        .p-form__primary{
+            padding: 0 16px;
+            margin: 0;
+            border: 0;
+            width: 240px;
+            height: 48px;
+            color: #FFF;
+            background: #D5001C;
+            text-align: left;
+        }
+        .p-form__primary:hover{
+            background: #980014;
+        }
+        .p-form__primary span{
+            font-size: 16px;
+        }
+        .p-form__primary svg{
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+        .p-form__primary span{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        #p-form__pwLevel{
+            line-height: 16px;
+            margin-top: 48px;
+            margin-left: -50px;
+            color: #96989A;
+            font-size: 12px;
+        }
+        .pwdstr{
+            position:absolute;
+            top: 24px;
+            left: calc(200% - 50px);
+            margin: 0!important;
+            color: #96989A;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+        .pwdstr>span{
+            margin-left: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="p-form__title" id="exampleModalLabel">个人信息</div>
+    <div class="p-form__main">
+        <form id="form1" role="form"  class="form-horizontal" >
+            <div class="form-group">
+                <div class="col-xs-4">
+                    <span class="p-form__tips">登录名：</span>
+                    <input type="text" class="form-control " th:value="${user.username}" name="username"  maxlength="20" th:attr="readonly=${user.id}!=null?'readonly':'false'" />
+                </div>
+                <div class="col-xs-4">
+                    <span class="p-form__tips">姓名：</span>
+                    <input type="text" class="form-control " th:value="${user.truename}" name="truename" maxlength="20"   />
+                </div>
+                <div class="col-xs-4">
+                    <span class="p-form__tips">角色：</span>
+                    <input type="text" class="form-control "  readonly="readonly" th:value="${user.act}" name="act" maxlength="40" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-4">
+                    <span class="p-form__tips">电话：</span>
+                    <input type="text" class="form-control "   th:value="${user.tel}" name="tel" maxlength="20" />
+                </div>
+                <div class="col-xs-4">
+                    <span class="p-form__tips">邮箱：</span>
+                    <input type="text" class="form-control "  th:value="${user.email}" name="email" maxlength="20" />
+                </div>
+                <div class="col-xs-4"></div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-4">
+                    <span class="p-form__tips">原密码：</span>
+                    <input type="password" class="form-control "  id="password" name="password" maxlength="20" />
+                </div>
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4"></div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-4">
+                    <span class="p-form__tips">新密码：</span>
+                    <input type="password" class="form-control "  id="newpassword" name="newpassword" maxlength="20" />
+                </div>
+                <div class="col-xs-4">
+                    <span class="p-form__tips">确认密码：</span>
+                    <div>
+                        <input type="password" class="form-control p-form__pw2"  id="newpassword2" name="newpassword2" maxlength="20" />
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div id="p-form__pwLevel">
+                        密码必须包含数字、英文特及殊字符，不少于8个字符
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="p-form__footer">
+            <button type="button" class="p-form__primary" id="btnSubmit">
+                <svg t="1609747179137" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10988" width="200" height="200"><path d="M1000.064 232.064L791.936 23.936c-9.6-9.6-21.376-16.64-34.176-20.48V0H40.96A40.96 40.96 0 0 0 0 40.96v942.08c0 22.656 18.304 40.96 40.96 40.96h942.08a40.96 40.96 0 0 0 40.96-40.96V289.92c0-21.76-8.576-42.496-23.936-57.856zM348.16 92.16h327.68v133.12H348.16V92.16z m583.68 839.68H92.16V92.16h174.08v174.08c0 22.656 18.304 40.96 40.96 40.96h409.6a40.96 40.96 0 0 0 40.96-40.96V120.064l174.08 174.08v637.696z" fill="#ffffff" p-id="10989"></path><path d="M512 422.4a184.32 184.32 0 1 0 0.064 368.704A184.32 184.32 0 0 0 512 422.4z m0 286.72a102.4 102.4 0 1 1 0-204.8 102.4 102.4 0 0 1 0 204.8z" fill="#ffffff" p-id="10990"></path></svg><span>保存</span>
+            </button>
+        </div>
+    </div>
+</div>
+<script th:inline="javascript">
+    $(function(){
+        $("#newpassword").pwdstrategy();
+        $('#form1').validation({reqmark:false});
+        $("#btnSubmit").click(function(){
+            if($("#form1").valid()==false){
+                $(".form-group.has-error").eq(0).find("input,select,textarea").focus();
+                return false;
+            }
+            if($("#password").val()!=""){
+                if($("#newpassword").val()==""){
+                    alert("请输入新密码");
+                    $("#newpassword").focus();
+                    return  ;
+                }
+                if(!$("#newpassword").pwdpass()){
+                    alert("密码必须包含数字、英文特及殊字符，不少于8个字符！");
+                    return ;
+                }
+                if($("#newpassword2").val()!=$("#newpassword").val()){
+                    alert("两次密码不一致");
+                    $("#newpassword2").focus();
+                    return  ;
+                }
+            }
+            if($("#password").val()!="") {
+                var pwd = $("#password").val();
+                $("#password").val(Base64.encode(pwd));
+                var pwd2 = $("#newpassword").val();
+                $("#newpassword").val(Base64.encode(pwd2));
+                $("#newpassword2").val(Base64.encode(pwd2));
+            }
+            $.post("uinfop",$("form").serialize()+"&action=save&tokensign="+$.cookie("tokensign"),function(data){
+                //console.info(data);
+                if(data[0]){
+                    alert("修改成功");
+                    //closemodal();
+
+                }else{
+                    alert(data[1]);
+                }
+            },"json");
+        });
+    });
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bond.allianz.mapper.MenuMapper">
+  <resultMap id="BaseResultMap" type="com.bond.allianz.entity.Menu">
+    <result column="menuno" jdbcType="INTEGER" property="menuno" />
+    <result column="menutext" jdbcType="VARCHAR" property="menutext" />
+    <result column="menuname" jdbcType="VARCHAR" property="menuname" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="pmenuno" jdbcType="INTEGER" property="pmenuno" />
+    <result column="sendmode" jdbcType="INTEGER" property="sendmode" />
+    <result column="mainword" jdbcType="VARCHAR" property="mainword" />
+    <result column="valid" jdbcType="TINYINT" property="valid" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    menuno, menutext, menuname, url, pmenuno,sendmode, mainword, valid,sort
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from menu
+    where menuno = #{menuno,jdbcType=INTEGER}
+  </select>
+  <select id="selectByUrl" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from menu
+    where url = #{url,jdbcType=VARCHAR}
+  </select>
+  <select id="selectList" resultMap="BaseResultMap"  >
+    select
+    <include refid="Base_Column_List" />
+    from menu
+    where  valid=#{valid,jdbcType=TINYINT}
+    order by pmenuno,sort
+  </select>
+  <select id="selectAllList" resultMap="BaseResultMap"  >
+    select
+    <include refid="Base_Column_List" />
+    from menu
+    order by pmenuno,sort
+  </select>
+
+  <select id="selectListByAct" resultMap="BaseResultMap"  >
+    select
+    m.menuno, m.menutext, m.menuname, m.url, m.pmenuno,m.sendmode, m.mainword, m.valid,m.sort
+    from menu m ,actmenu a where m.menuno=a.menuno and a.actname in
+    <foreach item="item" index="index" collection="act" open="("
+             separator="," close=")">
+      #{item}
+    </foreach>
+    and  m.valid=1
+    group by m.menuno, m.menutext, m.menuname, m.url, m.pmenuno,m.sendmode, m.mainword, m.valid,m.sort
+    order by m.pmenuno,m.menuno
+  </select>
+  <insert id="insert" parameterType="com.bond.allianz.entity.Menu">
+    insert into menu (menuno, menutext, menuname, 
+      url, pmenuno, sendmode, 
+      mainword, valid,
+      sort)
+    values (#{menuno,jdbcType=INTEGER}, #{menutext,jdbcType=VARCHAR}, #{menuname,jdbcType=VARCHAR}, 
+      #{url,jdbcType=VARCHAR}, #{pmenuno,jdbcType=INTEGER}, #{sendmode,jdbcType=INTEGER}, 
+      #{mainword,jdbcType=VARCHAR}, #{valid,jdbcType=TINYINT},
+      #{sort,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bond.allianz.entity.Menu">
+    insert into menu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="menuno != null">
+        menuno,
+      </if>
+      <if test="menutext != null">
+        menutext,
+      </if>
+      <if test="menuname != null">
+        menuname,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="pmenuno != null">
+        pmenuno,
+      </if>
+      <if test="sendmode != null">
+        sendmode,
+      </if>
+      <if test="mainword != null">
+        mainword,
+      </if>
+      <if test="valid != null">
+        valid,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="menuno != null">
+        #{menuno,jdbcType=INTEGER},
+      </if>
+      <if test="menutext != null">
+        #{menutext,jdbcType=VARCHAR},
+      </if>
+      <if test="menuname != null">
+        #{menuname,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="pmenuno != null">
+        #{pmenuno,jdbcType=INTEGER},
+      </if>
+      <if test="sendmode != null">
+        #{sendmode,jdbcType=INTEGER},
+      </if>
+      <if test="mainword != null">
+        #{mainword,jdbcType=VARCHAR},
+      </if>
+      <if test="valid != null">
+        #{valid,jdbcType=TINYINT},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.bond.allianz.entity.Menu" >
+  update menu
+  set menutext = #{menutext,jdbcType=VARCHAR},
+  menuname = #{menuname,jdbcType=VARCHAR},
+  url = #{url,jdbcType=VARCHAR},
+  pmenuno = #{pmenuno,jdbcType=INTEGER},
+  sendmode = #{sendmode,jdbcType=INTEGER},
+  mainword = #{mainword,jdbcType=VARCHAR},
+  valid = #{valid,jdbcType=TINYINT},
+  sort = #{sort,jdbcType=INTEGER}
+  where menuno = #{menuno,jdbcType=INTEGER}
+  </update>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from menu
+    where menuno = #{tid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByPmenuno" parameterType="java.lang.Integer" >
+    delete from menu
+    where pmenuno = #{tid,jdbcType=INTEGER}
+  </delete>
+</mapper>

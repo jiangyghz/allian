@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="ZH-CN"  >
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link href="./css/public.css" type="text/css" rel="stylesheet" />
+     <link href="./css/reset.css" type="text/css" rel="stylesheet" />
+     <link href="./css/main.css" type="text/css" rel="stylesheet" />
+     <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/jquery.pwdstrategy.js"></script>
+    <script src="../js/base64.min.js"></script>
+     <title>后台管理登录界面</title>
+     <style>
+          .login_c {
+               top: 85px;
+               text-align: center;
+          }
+
+          .footer {
+               height: 69px;
+          }
+
+          .footer_1200 {
+               margin-top: 15px;
+          }
+
+          .login_right {
+               background: rgb(0, 99, 138);
+               border: 1px solid rgb(0, 99, 138);
+               margin: 0 !important;
+               display: inline-block;
+               float: none;
+               transform-origin: center !important;
+          }
+
+          .login_right input{
+               background: none;
+               color: rgb(118, 224, 233);
+               margin: 15px 0px 0px 20px;
+          }
+          .login_right input::-webkit-input-placeholder { /* WebKit browsers */
+               color: rgb(118, 224, 233); }
+          .login_right input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+               color: rgb(118, 224, 233); }
+          .login_right input::-moz-placeholder { /* Mozilla Firefox 19+ */
+               color: rgb(118, 224, 233); }
+          .login_right input:-ms-input-placeholder { /* Internet Explorer 10+ */
+               color: rgb(118, 224, 233); }
+          .login_right input:focus::-webkit-input-placeholder{ color:rgb(118, 224, 233); }
+
+          .login_right .login_PT {
+               background: none;
+               border-radius: 0;
+               text-indent: 0;
+               line-height: 105px;
+          }
+
+          .sr3 {
+               background: url(./images/icon_user_7.png) no-repeat;
+          }
+
+          .sr4 {
+               background: url(./images/icon_pwd_7.png) no-repeat;
+          }
+
+          .login_btn {
+               background: #FFF;
+          }
+
+          .login_btn .login_btn_submit {
+               background: rgb(118, 224, 233);
+               color: rgb(0, 71, 105);
+          }
+          .login_tip {
+               color: #FFF;
+          }
+          .login_tip:focus,.login_tip:hover {
+               color: rgb(118, 224, 233);
+          }
+          @media screen and (min-width:1151px) and (max-width: 1600px) {
+              .login_right {
+                  transform: scale(0.8);
+                  transform-origin: 0px 0px;
+              }
+          }
+
+          @media screen and (max-width: 1150px) {
+              .login_right {
+                  transform: scale(0.7);
+                  transform-origin: 0px 0px;
+              }
+          }
+          .qydm{min-height: 50px;}
+          .login_input_panel{padding-top: 25px;}
+          .pwdstr{ display: block; padding: 10px 0 0 0 ;}
+          .login_right{
+               position: relative;
+          }
+          .login_right::before{
+               content: '';
+               position: absolute;
+               bottom: -1px;
+               left: -1px;
+               width: 40px;
+               height: 40px;
+               border-left: 3px solid #84adc0;
+               border-bottom: 3px solid #84adc0;
+          }
+          .login_right::after{
+               content: '';
+               position: absolute;
+               bottom: -1px;
+               right: -1px;
+               width: 40px;
+               height: 40px;
+               border-right: 3px solid #84adc0;
+               border-bottom: 3px solid #84adc0;
+          }
+          .login_PT{
+               position: relative;
+          }
+          .login_PT::before{
+               content: '';
+               position: absolute;
+               top: -1px;
+               left: -1px;
+               width: 40px;
+               height: 40px;
+               border-left: 3px solid #84adc0;
+               border-top: 3px solid #84adc0;
+          }
+          .login_PT::after{
+               content: '';
+               position: absolute;
+               top: -1px;
+               right: -1px;
+               width: 40px;
+               height: 40px;
+               border-right: 3px solid #84adc0;
+               border-top: 3px solid #84adc0;
+          }
+          .login_title{
+               position: fixed;
+               top: 60px;
+               left: 40px;
+               color: #FFF;
+               font-size: 55px;
+          }
+     </style>
+</head>
+
+<body>
+     <form id="form1" >
+          <div class="login_bg"><img src="./images/bg_7.png" style="display:block;"></div>
+          <div class="login_title">
+               <!--奔驰保障服务产品平台-->
+          </div>
+          <div class="login_c" style="top:25%!important">
+               <div class="w1200 clearfix">
+
+                    <div class="login_right">
+                         <div class="login_PT">重置密码</div>
+                         <div class="login_input_panel" th:if="${isvalid}==1">
+<!--                              <div class="qydm">-->
+<!--                                   <div class="sr2">-->
+
+<!--                                        <input type="text" ID="userid" name="userid" Width="305px" Height="32px"-->
+<!--                                             placeholder="企业代码"/>-->
+<!--                                   </div>-->
+<!--                              </div>-->
+                              <div class="qydm">
+                                   <div class="sr3"><input type="hidden" name="id" th:value="${id}" />
+                                        <input ID="username" name="username" Width="305px" Height="32px" th:value="${map.username}"
+                                             placeholder="邮箱"  readonly="readonly" />
+                                   </div>
+                              </div>
+
+                             <div class="qydm">
+                                 <div class="sr4">
+                                     <input ID="password" name="password"  Width="305px" Height="32px" type="password"
+                                            TextMode="Password" placeholder="新密码"/>
+                                 </div>
+                             </div>
+                             <div class="qydm">
+                                 <div class="sr4">
+                                     <input ID="password2" name="password2"  Width="305px" Height="32px" type="password"
+                                            TextMode="Password" placeholder="确认密码"/>
+                                 </div>
+                             </div>
+                              <div class="login_btn">
+                                   <div ID="btnSumbit" class="login_btn_submit" Text=""
+                                        >重置密码</div>
+                              </div>
+                              <a class="login_tip" href="index7">返回登录</a>
+                         </div>
+                         <div class="login_input_panel" th:if="${isvalid}==0" style="text-align:center; padding:20px 0;">
+                             该请求无效或已过期</br>
+                             <a class="login_tip" href="index7">返回登录</a>
+                         </div>
+<!--                        <div class="school"><a href="http://allianz.chinaopenschool.com" target="_blank">E-learning</a></div>-->
+                    </div>
+
+               </div>
+          </div>
+          <!--底部-->
+          <div class="footer">
+               <div class="footer_1200  clearfix">
+
+                    <p>版权所有：Copyright© 2019 Bond. All Rights Reserved.</p>
+               </div>
+          </div>
+     </form>
+<script>
+     var reset=function(){
+          if($("#password").val()==""){
+               $("#password").focus();
+               return;
+          }
+         if(!$("#password").pwdpass()){
+             alert("密码必须包含数字、英文特及殊字符，不少于8个字符！");
+             return ;
+         }
+         if($("#password2").val()!=$("#password").val()){
+             $("#password2").focus();
+             alert("两次密码不一样");
+             return;
+         }
+         var pwd = $("#password").val();
+         $("#password").val(Base64.encode(pwd));
+         var pwd2 = $("#password2").val();
+         $("#password2").val(Base64.encode(pwd2));
+          $.post("../login/reset",$("#form1").serialize(),function (data) {
+               if(data.code==1){
+                   alert("修改成功，请重新登录");
+                   location.href="index7";
+               }else{
+                   //console.info(data.msg);
+                    alert(data.msg);
+               }
+          },"json");
+     };
+     $(function () {
+         $("#password").pwdstrategy();
+          $(window).bind("keydown",function(event) {
+               var event=event||window.event;
+               if(event.keyCode==13) {
+                   reset();
+               }
+          });
+          $("#btnSumbit").click(function(){
+               reset();
+          });
+     })
+</script>
+</body>
+
+</html>

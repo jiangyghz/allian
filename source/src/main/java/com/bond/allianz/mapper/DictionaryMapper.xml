@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bond.allianz.mapper.DictionaryMapper">
+  <resultMap id="BaseResultMap" type="com.bond.allianz.entity.Dictionary">
+    <id column="dicid" jdbcType="INTEGER" property="dicid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="parent_id" jdbcType="INTEGER" property="parent_id" />
+    <result column="display" jdbcType="INTEGER" property="display" />
+    <result column="disabled" jdbcType="INTEGER" property="disabled" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    dicid, name, memo, sort, parent_id, display, disabled, code
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from jt_dictionary
+    where dicid = #{dicid,jdbcType=INTEGER}
+  </select>
+  <select id="selectListByPId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from jt_dictionary
+    where parent_id = #{parent_id,jdbcType=INTEGER}
+    <if test="display == 1" >
+       and display = 1
+    </if>
+    <if test="display == 0" >
+       and display = 0
+    </if>
+    order by parent_id,sort
+  </select>
+  <select id="selectAllList"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from jt_dictionary
+    where display > -1
+    order by parent_id,sort
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from jt_dictionary
+    where dicid = #{dicid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bond.allianz.entity.Dictionary">
+    insert into jt_dictionary (dicid, name, memo, 
+      sort, parent_id, display, 
+      disabled, code)
+    values (#{dicid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR}, 
+      #{sort,jdbcType=INTEGER}, #{parent_id,jdbcType=INTEGER}, #{display,jdbcType=INTEGER},
+      #{disabled,jdbcType=INTEGER}, #{code,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bond.allianz.entity.Dictionary">
+    insert into jt_dictionary
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="dicid != null">
+        dicid,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="memo != null">
+        memo,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="parent_id != null">
+        parent_id,
+      </if>
+      <if test="display != null">
+        display,
+      </if>
+      <if test="disabled != null">
+        disabled,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="dicid != null">
+        #{dicid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null">
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="parent_id != null">
+        #{parent_id,jdbcType=INTEGER},
+      </if>
+      <if test="display != null">
+        #{display,jdbcType=INTEGER},
+      </if>
+      <if test="disabled != null">
+        #{disabled,jdbcType=INTEGER},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bond.allianz.entity.Dictionary">
+    update jt_dictionary
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null">
+        memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="parent_id != null">
+        parent_id = #{parent_id,jdbcType=INTEGER},
+      </if>
+      <if test="display != null">
+        display = #{display,jdbcType=INTEGER},
+      </if>
+      <if test="disabled != null">
+        disabled = #{disabled,jdbcType=INTEGER},
+      </if>
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where dicid = #{dicid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bond.allianz.entity.Dictionary">
+    update jt_dictionary
+    set name = #{name,jdbcType=VARCHAR},
+      memo = #{memo,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=INTEGER},
+      parent_id = #{parent_id,jdbcType=INTEGER},
+      display = #{display,jdbcType=INTEGER},
+      disabled = #{disabled,jdbcType=INTEGER},
+      code = #{code,jdbcType=VARCHAR}
+    where dicid = #{dicid,jdbcType=INTEGER}
+  </update>
+
+</mapper>

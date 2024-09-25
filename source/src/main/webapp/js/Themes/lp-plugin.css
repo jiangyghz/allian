@@ -1,0 +1,30 @@
+@charset "utf-8";
+*{margin:0;padding:0;}
+li{list-style:none;}
+textarea{overflow:auto;resize:none;}
+a,button{cursor:pointer;}
+
+
+/*/!* 评分插件默认样式 *!/*/
+/*li.normal{float:left;width:18px;height:18px;background:url(grade-theme1.png) no-repeat;background-size:contain;text-indent:-9999px;margin-right:4px;-webkit-tap-highlight-color:rgba(0,0,0,0);-moz-tap-highlight-color:rgba(0, 0, 0, 0);tap-highlight-color:rgba(0, 0, 0, 0);}*/
+/*li.normal.active{background-image:url(grade-theme1-active.png);}*/
+
+
+/* 评分插件默认样式 */
+
+ul.ulcls{height:.9rem;}
+.ulcls li.normal{display:inline-block;width:.7rem;height:.7rem;background:url(grade-theme1.png) no-repeat;background-size:contain;text-indent:-9999px;margin-right:4px;-webkit-tap-highlight-color:rgba(0,0,0,0);-moz-tap-highlight-color:rgba(0, 0, 0, 0);tap-highlight-color:rgba(0, 0, 0, 0);}
+.ulcls li.active{background-image:url(grade-theme1-active.png);}
+.gradeval{display:block;font-size:.2rem;color:#f60;}
+
+
+
+
+
+
+
+
+
+
+
+

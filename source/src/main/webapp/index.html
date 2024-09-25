@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+</head>
+<body>
+<script>
+        $(function(){
+            var cookie=$.cookie("allianz");
+            if(cookie!=null) {
+                //if (cookie.type == "0") {
+                    location.href = 'mainadmin'
+                // } else {
+                //     location.href = 'mainform';
+                // }
+            }else{
+                location.href = 'login/loginout';
+            }
+        });
+</script>
+</body>
+</html>

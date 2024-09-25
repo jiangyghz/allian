@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>税务信息设置</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap-validation/bootstrap3-validation.min.js"></script>
+    <script src="../js/jquery.pwdstrategy.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+</head>
+
+<body>
+<div class="modal-header" >
+    <h4 class="modal-title" id="exampleModalLabel">税务信息设置</h4>
+</div>
+
+<div class="modal-body" style=" overflow:auto;">
+    <form id="form1" role="form"  class="form-horizontal" >
+        <div class="form-group">
+            <label class="col-sm-3 control-label">纳税人识别号：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control " check-type="required" th:value="${info.taxpayerNum}" name="taxpayerNum"  maxlength="30"   />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">法人名称：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control " check-type="required" th:value="${info.legalPersonName}" name="legalPersonName"    />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">企业名称：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control " check-type="required" th:value="${info.enterpriseName}" name="enterpriseName"    />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">联系人名称：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control "  th:value="${info.contactsName}"  name="contactsName"    />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">联系人邮箱：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control "  th:value="${info.contactsEmail}" name="contactsEmail" maxlength="25"     />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">联系人手机号：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control "  th:value="${info.contactsPhone}" name="contactsPhone" maxlength="25"     />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">地区编码：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control "  th:value="${info.regionCode}" name="regionCode" maxlength="10"    />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">市(区)名：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control "   th:value="${info.cityName}" name="cityName" maxlength="10" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">地址：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control "   th:value="${info.enterpriseAddress}" name="enterpriseAddress" maxlength="50" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">证件图片：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control "   th:value="${info.taxRegistrationCertificate}" name="taxRegistrationCertificate" maxlength="100" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">票通私钥(票通提供)：</label>
+            <div class="col-xs-8">
+                <textarea type="text" class="form-control "   th:text="${info.privateKey}" name="privateKey" maxlength="2000" rows="5" ></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">票通公钥(票通提供)：</label>
+            <div class="col-xs-8">
+                <textarea type="text" class="form-control "   th:text="${info.ptPublicKey}" name="ptPublicKey" maxlength="2000" rows="3" ></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">3DES秘钥(票通提供)：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control "   th:value="${info.password}" name="password" maxlength="50" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">平台简称(票通提供)：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control "   th:value="${info.platform_alias}" name="platform_alias" maxlength="50" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">平台编码(票通提供)：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control "   th:value="${info.platform_code}" name="platform_code" maxlength="50" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">接口路径：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control "   th:value="${info.pathurl}" name="pathurl" maxlength="100" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">税收分类编码：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control "   th:value="${info.taxClassificationCode}" name="taxClassificationCode" maxlength="50" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">货物名称：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control "   th:value="${info.goodsName}" name="goodsName" maxlength="50" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">开票人：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control "   th:value="${info.drawername}" name="drawername" maxlength="50" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">税率：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control "   th:value="${info.taxRateValue}" name="taxRateValue" maxlength="50" />
+            </div>
+        </div>
+
+    </form>
+</div>
+<div class="modal-footer " style="text-align: center;">
+    <button type="button" class="btn btn-primary" id="btnSubmit">保存</button>
+<!--    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>-->
+</div>
+<script th:inline="javascript">
+    $(function(){
+        $('#form1').validation({reqmark:false});
+        $("#btnSubmit").click(function(){
+            if($("#form1").valid()==false){
+                $(".form-group.has-error").eq(0).find("input,select,textarea").focus();
+                return false;
+            }
+
+            $.post("invoiceinfo",$("form").serialize()+"&action=save&tokensign="+$.cookie("tokensign"),function(data){
+                //console.info(data);
+                if(data[0]){
+                    alert("修改成功");
+                    //closemodal();
+
+                }else{
+                    alert(data[1]);
+                }
+            },"json");
+        });
+    });
+
+</script>
+</body>
+
+</html>
