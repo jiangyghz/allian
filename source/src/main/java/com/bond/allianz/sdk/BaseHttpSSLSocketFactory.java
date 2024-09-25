@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.security.KeyStore;
 import java.security.cert.X509Certificate;
 
 import javax.net.ssl.HostnameVerifier;
@@ -86,8 +87,10 @@ public class BaseHttpSSLSocketFactory extends SSLSocketFactory {
 	private SSLContext createEasySSLContext() {
 		try {
 			SSLContext context = SSLContext.getInstance("SSL");
-			context.init(null,
-					new TrustManager[] { MyX509TrustManager.manger }, null);
+			TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+			tmf.init((KeyStore) null);
+			TrustManager[] trustManagers = tmf.getTrustManagers();
+			context.init(null, trustManagers, null);
 			return context;
 		} catch (Exception e) {
 			LogUtil.writeErrorLog(e.getMessage(), e);
@@ -95,23 +98,7 @@ public class BaseHttpSSLSocketFactory extends SSLSocketFactory {
 		}
 	}
 
-	public static class MyX509TrustManager implements X509TrustManager {
-
-		static MyX509TrustManager manger = new MyX509TrustManager();
-
-		public MyX509TrustManager() {
-		}
-
-		public X509Certificate[] getAcceptedIssuers() {
-			return null;
-		}
-
-		public void checkClientTrusted(X509Certificate[] chain, String authType) {
-		}
-
-		public void checkServerTrusted(X509Certificate[] chain, String authType) {
-		}
-	}
+	// Removed MyX509TrustManager class as it is no longer needed
 
 	/**
 	 * 解决由于服务器证书问题导致HTTPS无法访问的情况 PS:HTTPS hostname wrong: should be <localhost>
