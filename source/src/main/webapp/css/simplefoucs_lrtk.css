@@ -1,9 +1,0 @@
-﻿@charset "utf-8";
-img { border: 0px; }
-.bannerbox { width:980px; height:420px; overflow: hidden; margin: 0px auto; }
-#focus { width:980px; height:420px; clear: both; overflow: hidden; position: relative; float: left; }
-    #focus ul { width:980px; height: 447px; float: left; position: absolute; clear: both; padding: 0px; margin: 0px; }
-        #focus ul li { float: left; width:980px; height:420px; overflow: hidden; position: relative; padding: 0px; margin: 0px; }
-    #focus .preNext { width: 550px; height:420px; position: absolute; top: 0px; cursor: pointer; }
-    #focus .pre { left: 0; background: url(../images/sprite.png) no-repeat left center; }
-    #focus .next { right: 0; background: url(../images/sprite1.png) no-repeat right center; }
